@@ -4,13 +4,13 @@ from pydantic import BaseModel, ConfigDict, StrictInt
 class StampRallySpot(BaseModel):
     model_config = ConfigDict(extra="allow")
 
-    # isPublicSpot=True
-    # useCheckinSurvey=False
-    # isExternalCheckin=False
-    # isRewardRequiredSpot=False
-    # isCheckinDisabled=False
-    # hasSpotReward=False
-    # useGps=False
+    isPublicSpot: bool  # =True
+    useCheckinSurvey: bool  # =False
+    isExternalCheckin: bool  # =False
+    isRewardRequiredSpot: bool  # =False
+    isCheckinDisabled: bool  # =False
+    hasSpotReward: bool  # =False
+    useGps: bool  # =False
     # maxCheckinCountForUser=0
     # quizTryAnswerLimit=0
     # keywordLength=0
