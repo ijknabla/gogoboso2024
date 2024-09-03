@@ -3,16 +3,14 @@ from __future__ import annotations
 import re
 import sys
 from asyncio import run
-from contextlib import asynccontextmanager
 from functools import wraps
 from json import dump, loads
-from typing import IO, TYPE_CHECKING, Protocol, TypeVar
+from typing import IO
 
 import click
 import pyppeteer
 
-if TYPE_CHECKING:
-    from collections.abc import AsyncIterator
+from .protocol import closing
 
 ROOT_URI = "https://platinumaps.jp/d/gogoboso2024"
 MAPS_URI = "https://platinumaps.jp/maps/gogoboso2024"
@@ -36,7 +34,7 @@ async def boot_options(
     indent: int | None,
     headless: bool,
 ) -> None:
-    async with _closing(
+    async with closing(
         await pyppeteer.launch(args=["--lang=ja"], headless=headless)
     ) as browser:
         (page,) = await browser.pages()
@@ -54,22 +52,6 @@ async def boot_options(
                 raise ValueError(source)
             data = loads(matched.group("json"))
             dump(data, output, indent=indent)
-
-
-class _SupportsClose(Protocol):
-    async def close(self) -> None:
-        pass
-
-
-Closable = TypeVar("Closable", bound=_SupportsClose)
-
-
-@asynccontextmanager
-async def _closing(closable: Closable) -> AsyncIterator[Closable]:
-    try:
-        yield closable
-    finally:
-        await closable.close()
 
 
 if __name__ == "__main__":
