@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "gobo2024"
+version = "0.0.0.dev0"
+description = "GOGO房総デジタルポイントラリー データベース 2024"
+authors = ["ijknabla <ijknabla@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
