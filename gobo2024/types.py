@@ -22,7 +22,7 @@ class StampRallySpot(BaseModel):
     # stampRallyId=852
     # spotLng=139.982586996195
     # spotLat=35.6965389476619
-    # spotId=337568
+    spotId: StrictInt  # =337568
     spotRewards: None  # =None
     survey: None  # =None
     # quizSelectorTexts=[]
