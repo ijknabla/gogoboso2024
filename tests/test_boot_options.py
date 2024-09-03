@@ -8,5 +8,4 @@ if TYPE_CHECKING:
 
 def test_boot_options(boot_options: BootOptions) -> None:
     for spot in boot_options.stampRallySpots:
-        assert not spot.useGps
         assert spot.stampType == spot.stampTypeText

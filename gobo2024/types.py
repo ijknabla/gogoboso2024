@@ -28,7 +28,7 @@ class StampRallySpot(BaseModel):
     isRewardRequiredSpot: StrictBool  # =False
     isCheckinDisabled: StrictBool  # =False
     hasSpotReward: StrictBool  # =False
-    useGps: StrictBool  # =False
+    useGps: Literal[False]  # =False
     maxCheckinCountForUser: StrictInt  # =0
     quizTryAnswerLimit: StrictInt  # =0
     keywordLength: StrictInt  # =0
