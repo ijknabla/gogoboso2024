@@ -1,3 +1,5 @@
+from typing import Literal
+
 from pydantic import (
     BaseModel,
     ConfigDict,
@@ -6,6 +8,15 @@ from pydantic import (
     StrictInt,
     StrictStr,
 )
+
+StampType = Literal["QRCode", "GPS"]
+SpotRewardType = Literal["Application"]
+PointCurrencyType = Literal["Unset"]
+SpotShareType = Literal["Public"]
+StampTypeText = Literal["QRCode", "GPS"]
+PointCurrencyTypeText = Literal["Unset"]
+SpotShareTypeText = Literal["Public"]
+SpotRewardSubType = Literal["Normal"]
 
 
 class StampRallySpot(BaseModel):
@@ -34,20 +45,20 @@ class StampRallySpot(BaseModel):
     survey: None  # =None
     quizSelectorTexts: list[StrictStr]  # =[]
     spotGroupIds: list[StrictInt]  # =[]
-    # stampType='QRCode'
-    # spotRewardType='Application'
-    # pointCurrencyType='Unset'
-    # spotShareType='Public'
-    # stampTypeText='QRCode'
-    # pointCurrencyTypeText='Unset'
-    # spotShareTypeText='Public'
+    stampType: StampType  # ='QRCode'
+    spotRewardType: SpotRewardType  # ='Application'
+    pointCurrencyType: PointCurrencyType  # ='Unset'
+    spotShareType: SpotShareType  # ='Public'
+    stampTypeText: StampTypeText  # ='QRCode'
+    pointCurrencyTypeText: PointCurrencyTypeText  # ='Unset'
+    spotShareTypeText: SpotShareTypeText  # ='Public'
     samplePhotoDescription: None  # =None
     samplePhotoUrl: None  # =None
     spotTitle: StrictStr  # ='街のピザ屋\u3000コンパーレ\u3000コマーレ'
     keywordImageUrl: None  # =None
     keywordDescription: None  # =None
     keywordTitle: None  # =None
-    # spotRewardSubType='Normal'
+    spotRewardSubType: SpotRewardSubType  # ='Normal'
     spotRewardDescription: None  # =None
     spotRewardTitle: None  # =None
     spotRewardBannerUrl: None  # =None
