@@ -21,3 +21,24 @@ ruff = "^0.6.3"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+namespace_packages = true
+explicit_package_bases = true
+
+[tool.ruff.lint]
+# https://docs.astral.sh/ruff/rules/
+select = ["ALL"]
+ignore = [
+    # Ignore incompatible rules
+    "D203", "D212",
+    # Ignore rules that may cause conflict with formatter
+    "COM812",
+    "ISC001",
+    # Ignore not important rules
+    "ANN101",
+    "D100", "D101", "D102", "D103", "D104", "D106", "D107",
+    "D205", "D404",
+    # Ignore security rules
+    "S311",
+]
