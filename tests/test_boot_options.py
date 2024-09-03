@@ -11,6 +11,7 @@ def test_boot_options(boot_options: BootOptions) -> None:
     spots = boot_options.stampRallySpots
 
     assert set(Counter(spot.id for spot in spots).values()) == {1}
+    assert set(Counter(spot.spotId for spot in spots).values()) == {1}
 
     for spot in spots:
         assert spot.stampType == spot.stampTypeText
