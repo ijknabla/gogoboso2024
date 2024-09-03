@@ -6,8 +6,15 @@ authors = ["ijknabla <ijknabla@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 
+[tool.poetry.scripts]
+gobo2024 = "gobo2024.__main__:main"
+
 [tool.poetry.dependencies]
 python = "^3.10"
+click = "^8.1.7"
+pydantic = "^2.8.2"
+pyppeteer = "^2.0.0"
+sqlalchemy = "^2.0.32"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -26,6 +33,12 @@ build-backend = "poetry.core.masonry.api"
 namespace_packages = true
 explicit_package_bases = true
 
+[[tool.mypy.overrides]]
+module = [
+    "pyppeteer.*",
+]
+ignore_missing_imports = true
+
 [tool.ruff.lint]
 # https://docs.astral.sh/ruff/rules/
 select = ["ALL"]
@@ -41,4 +54,11 @@ ignore = [
     "D205", "D404",
     # Ignore security rules
     "S311",
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"gobo2024/types.py" = [
+    "ERA001",
+    "FA102",
+    "N815",
 ]
