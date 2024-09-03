@@ -19,12 +19,12 @@ async def main(
         input("Press Enter!")
 
 
-class SupportsClose(Protocol):
+class _SupportsClose(Protocol):
     async def close(self) -> None:
         pass
 
 
-Closable = TypeVar("Closable", bound=SupportsClose)
+Closable = TypeVar("Closable", bound=_SupportsClose)
 
 
 @asynccontextmanager
