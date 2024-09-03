@@ -1,13 +1,13 @@
 from __future__ import annotations
 
-import json
 import re
 from contextlib import AsyncExitStack, asynccontextmanager
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 from pyppeteer import launch
 
 from .protocol import closing
+from .types import BootOptions
 
 if TYPE_CHECKING:
     from collections.abc import AsyncIterator
@@ -35,7 +35,7 @@ async def scrape_boot_options(
     *,
     uri: str = "https://platinumaps.jp/maps/gogoboso2024?list=1",
     target: str = "window.__bootOptions",
-) -> Any:  # noqa: ANN401
+) -> BootOptions:
     await page.goto(uri)
 
     xpath = f"//script[starts-with(.,{target!r})]"
@@ -46,6 +46,6 @@ async def scrape_boot_options(
         if matched is None:
             raise RuntimeError(text)
 
-        return json.loads(matched.group("json"))
+        return BootOptions.model_validate_json(matched.group("json"))
 
     raise RuntimeError

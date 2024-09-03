@@ -3,7 +3,6 @@ from __future__ import annotations
 import sys
 from asyncio import run
 from functools import wraps
-from json import dump
 from typing import IO
 
 import click
@@ -34,7 +33,7 @@ async def boot_options(
 ) -> None:
     async with open_page(headless=headless) as page:
         boot_options = await scrape_boot_options(page)
-        dump(boot_options, output, indent=indent)
+        print(boot_options.model_dump_json(indent=indent), file=output)
 
 
 if __name__ == "__main__":
