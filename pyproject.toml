@@ -29,6 +29,12 @@ build-backend = "poetry.core.masonry.api"
 namespace_packages = true
 explicit_package_bases = true
 
+[[tool.mypy.overrides]]
+module = [
+    "pyppeteer",
+]
+ignore_missing_imports = true
+
 [tool.ruff.lint]
 # https://docs.astral.sh/ruff/rules/
 select = ["ALL"]
