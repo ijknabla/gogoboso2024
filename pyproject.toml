@@ -55,3 +55,10 @@ ignore = [
     # Ignore security rules
     "S311",
 ]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"gobo2024/types.py" = [
+    "ERA001",
+    "FA102",
+    "N815",
+]
