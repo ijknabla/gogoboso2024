@@ -23,8 +23,8 @@ class StampRallySpot(BaseModel):
     # spotLng=139.982586996195
     # spotLat=35.6965389476619
     # spotId=337568
-    # spotRewards=None
-    # survey=None
+    spotRewards: None  # =None
+    survey: None  # =None
     # quizSelectorTexts=[]
     # spotGroupIds=[]
     # stampType='QRCode'
@@ -34,17 +34,17 @@ class StampRallySpot(BaseModel):
     # stampTypeText='QRCode'
     # pointCurrencyTypeText='Unset'
     # spotShareTypeText='Public'
-    # samplePhotoDescription=None
-    # samplePhotoUrl=None
+    samplePhotoDescription: None  # =None
+    samplePhotoUrl: None  # =None
     # spotTitle='街のピザ屋\u3000コンパーレ\u3000コマーレ'
-    # keywordImageUrl=None
-    # keywordDescription=None
-    # keywordTitle=None
+    keywordImageUrl: None  # =None
+    keywordDescription: None  # =None
+    keywordTitle: None  # =None
     # spotRewardSubType='Normal'
-    # spotRewardDescription=None
-    # spotRewardTitle=None
-    # spotRewardBannerUrl=None
-    # stampRallyBaseIcon=None
+    spotRewardDescription: None  # =None
+    spotRewardTitle: None  # =None
+    spotRewardBannerUrl: None  # =None
+    stampRallyBaseIcon: None  # =None
     # stampRallyIcon='https://platinumaps.blob.core.windows.net/maps/857/spots/337568/stamprally/852.webp?v=638604079352646211'
 
 
