@@ -19,14 +19,14 @@ class StampRallySpot(BaseModel):
     # sortOrder=0
     # gpsAcceptableRange=0
     id: StrictInt  # =58023
-    # stampRallyId=852
+    stampRallyId: StrictInt  # =852
     # spotLng=139.982586996195
     # spotLat=35.6965389476619
     spotId: StrictInt  # =337568
     spotRewards: None  # =None
     survey: None  # =None
     # quizSelectorTexts=[]
-    # spotGroupIds=[]
+    spotGroupIds: list[StrictInt]  # =[]
     # stampType='QRCode'
     # spotRewardType='Application'
     # pointCurrencyType='Unset'
