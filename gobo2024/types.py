@@ -20,7 +20,7 @@ SpotRewardSubType = Literal["Normal"]
 
 
 class StampRallySpot(BaseModel):
-    model_config = ConfigDict(extra="allow")
+    model_config = ConfigDict(extra="forbid")
 
     isPublicSpot: StrictBool  # =True
     useCheckinSurvey: StrictBool  # =False
