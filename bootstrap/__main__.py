@@ -1,5 +1,8 @@
 from asyncio import run
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
 from functools import wraps
+from typing import Protocol, TypeVar
 
 import click
 import pyppeteer
@@ -12,8 +15,24 @@ async def main(
     *,
     headless: bool,
 ) -> None:
-    browser = await pyppeteer.launch(headless=headless)
-    await browser.close()
+    async with _closing(await pyppeteer.launch(headless=headless)):
+        input("Press Enter!")
+
+
+class SupportsClose(Protocol):
+    async def close(self) -> None:
+        pass
+
+
+Closable = TypeVar("Closable", bound=SupportsClose)
+
+
+@asynccontextmanager
+async def _closing(closable: Closable) -> AsyncIterator[Closable]:
+    try:
+        yield closable
+    finally:
+        await closable.close()
 
 
 if __name__ == "__main__":
