@@ -9,10 +9,6 @@ import click
 
 from .scraping import open_page, scrape_boot_options
 
-ROOT_URI = "https://platinumaps.jp/d/gogoboso2024"
-MAPS_URI = "https://platinumaps.jp/maps/gogoboso2024"
-LIST_URI = f"{MAPS_URI}?list=1"
-
 
 @click.group()
 def main() -> None: ...
