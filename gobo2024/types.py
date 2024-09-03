@@ -1,4 +1,11 @@
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt
+from pydantic import (
+    BaseModel,
+    ConfigDict,
+    StrictBool,
+    StrictFloat,
+    StrictInt,
+    StrictStr,
+)
 
 
 class StampRallySpot(BaseModel):
@@ -25,7 +32,7 @@ class StampRallySpot(BaseModel):
     spotId: StrictInt  # =337568
     spotRewards: None  # =None
     survey: None  # =None
-    # quizSelectorTexts=[]
+    quizSelectorTexts: list[StrictStr]  # =[]
     spotGroupIds: list[StrictInt]  # =[]
     # stampType='QRCode'
     # spotRewardType='Application'
@@ -36,7 +43,7 @@ class StampRallySpot(BaseModel):
     # spotShareTypeText='Public'
     samplePhotoDescription: None  # =None
     samplePhotoUrl: None  # =None
-    # spotTitle='街のピザ屋\u3000コンパーレ\u3000コマーレ'
+    spotTitle: StrictStr  # ='街のピザ屋\u3000コンパーレ\u3000コマーレ'
     keywordImageUrl: None  # =None
     keywordDescription: None  # =None
     keywordTitle: None  # =None
@@ -45,7 +52,7 @@ class StampRallySpot(BaseModel):
     spotRewardTitle: None  # =None
     spotRewardBannerUrl: None  # =None
     stampRallyBaseIcon: None  # =None
-    # stampRallyIcon='https://platinumaps.blob.core.windows.net/maps/857/spots/337568/stamprally/852.webp?v=638604079352646211'
+    stampRallyIcon: StrictStr  # ='https://platinumaps.blob.core.windows.net/maps/857/spots/337568/stamprally/852.webp?v=638604079352646211'
 
 
 class BootOptions(BaseModel):
