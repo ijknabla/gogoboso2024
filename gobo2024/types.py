@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt
 
 
 class StampRallySpot(BaseModel):
@@ -11,17 +11,17 @@ class StampRallySpot(BaseModel):
     isCheckinDisabled: StrictBool  # =False
     hasSpotReward: StrictBool  # =False
     useGps: StrictBool  # =False
-    # maxCheckinCountForUser=0
-    # quizTryAnswerLimit=0
-    # keywordLength=0
-    # checkinPoints=3
-    # checkinKey=0
-    # sortOrder=0
-    # gpsAcceptableRange=0
+    maxCheckinCountForUser: StrictInt  # =0
+    quizTryAnswerLimit: StrictInt  # =0
+    keywordLength: StrictInt  # =0
+    checkinPoints: StrictInt  # =3
+    checkinKey: StrictInt  # =0
+    sortOrder: StrictInt  # =0
+    gpsAcceptableRange: StrictInt  # =0
     id: StrictInt  # =58023
     stampRallyId: StrictInt  # =852
-    # spotLng=139.982586996195
-    # spotLat=35.6965389476619
+    spotLng: StrictFloat  # =139.982586996195
+    spotLat: StrictFloat  # =35.6965389476619
     spotId: StrictInt  # =337568
     spotRewards: None  # =None
     survey: None  # =None
