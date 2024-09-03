@@ -34,7 +34,7 @@ explicit_package_bases = true
 
 [[tool.mypy.overrides]]
 module = [
-    "pyppeteer",
+    "pyppeteer.*",
 ]
 ignore_missing_imports = true
 
