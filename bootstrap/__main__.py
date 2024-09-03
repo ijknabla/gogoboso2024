@@ -1,14 +1,18 @@
+from __future__ import annotations
+
 import re
 import sys
 from asyncio import run
-from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 from functools import wraps
 from json import dump, loads
-from typing import Protocol, TypeVar
+from typing import IO, TYPE_CHECKING, Protocol, TypeVar
 
 import click
 import pyppeteer
+
+if TYPE_CHECKING:
+    from collections.abc import AsyncIterator
 
 ROOT_URI = "https://platinumaps.jp/d/gogoboso2024"
 MAPS_URI = "https://platinumaps.jp/maps/gogoboso2024"
@@ -20,10 +24,16 @@ def main() -> None: ...
 
 
 @main.command
+@click.option(
+    "-o", "--output", type=click.File("w", encoding="utf-8"), default=sys.stdout
+)
+@click.option("--indent", type=int)
 @click.option("--headless/--headful", default=True)
 @(lambda f: wraps(f)(lambda *args, **kwargs: run(f(*args, **kwargs))))
 async def boot_options(
     *,
+    output: IO[str],
+    indent: int | None,
     headless: bool,
 ) -> None:
     async with _closing(
@@ -43,7 +53,7 @@ async def boot_options(
             if matched is None:
                 raise ValueError(source)
             data = loads(matched.group("json"))
-            dump(data, sys.stdout, indent=1)
+            dump(data, output, indent=indent)
 
 
 class _SupportsClose(Protocol):
