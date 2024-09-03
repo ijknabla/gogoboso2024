@@ -1,16 +1,16 @@
-from pydantic import BaseModel, ConfigDict, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt
 
 
 class StampRallySpot(BaseModel):
     model_config = ConfigDict(extra="allow")
 
-    isPublicSpot: bool  # =True
-    useCheckinSurvey: bool  # =False
-    isExternalCheckin: bool  # =False
-    isRewardRequiredSpot: bool  # =False
-    isCheckinDisabled: bool  # =False
-    hasSpotReward: bool  # =False
-    useGps: bool  # =False
+    isPublicSpot: StrictBool  # =True
+    useCheckinSurvey: StrictBool  # =False
+    isExternalCheckin: StrictBool  # =False
+    isRewardRequiredSpot: StrictBool  # =False
+    isCheckinDisabled: StrictBool  # =False
+    hasSpotReward: StrictBool  # =False
+    useGps: StrictBool  # =False
     # maxCheckinCountForUser=0
     # quizTryAnswerLimit=0
     # keywordLength=0
