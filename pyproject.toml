@@ -25,6 +25,12 @@ pre-commit = "^3.8.0"
 mypy = "^1.11.2"
 ruff = "^0.6.3"
 
+
+[tool.poetry.group.dynamic-test.dependencies]
+pytest = "^8.3.2"
+pytest-asyncio = "^0.24.0"
+pytest-cov = "^5.0.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
@@ -38,6 +44,9 @@ module = [
     "pyppeteer.*",
 ]
 ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "session"
 
 [tool.ruff.lint]
 # https://docs.astral.sh/ruff/rules/
@@ -61,4 +70,7 @@ ignore = [
     "ERA001",
     "FA102",
     "N815",
+]
+"tests/*.py" = [
+    "S101",
 ]

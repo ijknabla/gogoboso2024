@@ -28,7 +28,7 @@ class StampRallySpot(BaseModel):
     isRewardRequiredSpot: StrictBool  # =False
     isCheckinDisabled: StrictBool  # =False
     hasSpotReward: StrictBool  # =False
-    useGps: StrictBool  # =False
+    useGps: Literal[False]  # =False
     maxCheckinCountForUser: StrictInt  # =0
     quizTryAnswerLimit: StrictInt  # =0
     keywordLength: StrictInt  # =0
@@ -37,7 +37,7 @@ class StampRallySpot(BaseModel):
     sortOrder: StrictInt  # =0
     gpsAcceptableRange: StrictInt  # =0
     id: StrictInt  # =58023
-    stampRallyId: StrictInt  # =852
+    stampRallyId: Literal[852]  # =852
     spotLng: StrictFloat  # =139.982586996195
     spotLat: StrictFloat  # =35.6965389476619
     spotId: StrictInt  # =337568
