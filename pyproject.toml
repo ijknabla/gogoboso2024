@@ -45,6 +45,9 @@ module = [
 ]
 ignore_missing_imports = true
 
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "session"
+
 [tool.ruff.lint]
 # https://docs.astral.sh/ruff/rules/
 select = ["ALL"]
