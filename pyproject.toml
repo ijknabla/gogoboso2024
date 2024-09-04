@@ -15,6 +15,7 @@ click = "^8.1.7"
 pydantic = "^2.8.2"
 pyppeteer = "^2.0.0"
 sqlalchemy = "^2.0.32"
+openpyxl = "^3.1.5"
 
 
 [tool.poetry.group.dev.dependencies]
