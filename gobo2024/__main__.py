@@ -47,9 +47,17 @@ async def googlemap(
 
     writer = csv.writer(output)
 
-    writer.writerow(["スポット", "種類", "経度", "緯度"])
+    writer.writerow(["スポット", "種類", "URL", "経度", "緯度"])
     for x in sorted(boot_options.stampRallySpots, key=lambda spot: spot.spotId):
-        writer.writerow([x.spotTitle, x.stampType, x.spotLng, x.spotLat])
+        writer.writerow(
+            [
+                x.spotTitle,
+                x.stampType,
+                f"https://platinumaps.jp/maps/gogoboso2024?spot={x.spotId}",
+                x.spotLng,
+                x.spotLat,
+            ]
+        )
 
 
 if __name__ == "__main__":
