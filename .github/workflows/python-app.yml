@@ -34,3 +34,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Output csv
+      run: |
+        python -m gobo2024 googlemap -o 【2024年度】GOGO房総デジタルポイントラリー.csv
