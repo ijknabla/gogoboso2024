@@ -12,7 +12,7 @@ class SpotTitle(Table):
     __tablename__ = "spot.title"
 
     id: Mapped[SpotId] = mapped_column(Integer(), primary_key=True)
-    title: Mapped[str] = mapped_column(String())
+    text: Mapped[str] = mapped_column(String())
 
 
 class SpotLocation(Table):

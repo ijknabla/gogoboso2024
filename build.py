@@ -22,7 +22,7 @@ def main() -> None:
             session.add(
                 SpotTitle(
                     id=x.spotId,
-                    title=x.spotTitle,
+                    text=x.spotTitle,
                 )
             )
 
