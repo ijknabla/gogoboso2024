@@ -11,6 +11,8 @@ from gobo2024.types import StampId, StampType
 
 def main() -> None:
     path = (Path(__file__) / "../gobo2024/gobo2024.sqlite").resolve()
+    if path.exists():
+        return
     engine = create_engine(f"sqlite:///{path}")
 
     # CREATE TABLE
