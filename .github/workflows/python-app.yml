@@ -22,10 +22,32 @@ jobs:
     - uses: ./.github/actions/setup-gobo2024
     - name: Install dependencies
       run: |
-        poetry install --only=main,static-test,dynamic-test
-    - name: Lint with ruff
+        poetry install --only=main
+
+  dynamic-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ./.github/actions/setup-gobo2024
+    - name: Install dependencies
       run: |
-        poetry run ruff check
+        poetry install --only=dynamic-test
     - name: Test with pytest
       run: |
         poetry run pytest
+
+  static-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ./.github/actions/setup-gobo2024
+    - name: Install dependencies
+      run: |
+        poetry install --only=static-test
+    - name: Lint with ruff
+      run: |
+        poetry run ruff check
