@@ -5,6 +5,9 @@ description = "GOGO房総デジタルポイントラリー データベース 20
 authors = ["ijknabla <ijknabla@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+include = [
+    "gobo2024/gobo2024.db"
+]
 
 [tool.poetry.build]
 generate-setup-file = false
