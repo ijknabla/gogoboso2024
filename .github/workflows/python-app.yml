@@ -33,7 +33,7 @@ jobs:
     - uses: ./.github/actions/setup-gobo2024
     - name: Install dependencies
       run: |
-        poetry install --only=dynamic-test
+        poetry install --only=main,dynamic-test
     - name: Test with pytest
       run: |
         poetry run pytest
