@@ -1,8 +1,10 @@
 from pathlib import Path
 
 from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 
-from gobo2024.db import Table
+from bootstrap import load_boot_options
+from gobo2024.db import SpotLocation, Table
 
 
 def main() -> None:
@@ -11,6 +13,20 @@ def main() -> None:
 
     # CREATE TABLE
     Table.metadata.create_all(engine)
+
+    # load object
+    boot_options = load_boot_options()
+
+    with Session(engine) as session:
+        for x in sorted(boot_options.stampRallySpots, key=lambda x: x.spotId):
+            location = SpotLocation(
+                id=x.spotId,
+                longitude=x.spotLng,
+                latitude=x.spotLat,
+            )
+            session.add(location)
+
+        session.commit()
 
 
 if __name__ == "__main__":
