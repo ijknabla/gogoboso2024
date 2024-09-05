@@ -28,12 +28,10 @@ jobs:
         cache: "poetry"
     - name: Install dependencies
       run: |
-        pip install --upgrade pip
-        pip install poetry poetry-plugin-export
-        poetry export --without-hashes --only=main,static-test,dynamic-test | pip install -r /dev/stdin
+        poetry install --only=main,static-test,dynamic-test
     - name: Lint with ruff
       run: |
-        ruff check
+        poetry run ruff check
     - name: Test with pytest
       run: |
-        pytest
+        poetry run pytest
