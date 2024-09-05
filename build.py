@@ -8,7 +8,7 @@ from gobo2024.db import SpotLocation, Table
 
 
 def main() -> None:
-    path = (Path(__file__) / "../gobo2024/gobo2024.db").resolve()
+    path = (Path(__file__) / "../gobo2024/gobo2024.sqlite").resolve()
     engine = create_engine(f"sqlite:///{path}")
 
     # CREATE TABLE

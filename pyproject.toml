@@ -6,7 +6,7 @@ authors = ["ijknabla <ijknabla@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 include = [
-    "gobo2024/gobo2024.db"
+    "gobo2024/gobo2024.sqlite"
 ]
 
 [tool.poetry.build]
