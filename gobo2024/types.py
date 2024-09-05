@@ -10,13 +10,8 @@ from pydantic import (
 )
 
 SpotId = NewType("SpotId", int)
-SpotIdAnnotation = Annotated[SpotId, StrictInt]
-
 Longitude = NewType("Longitude", float)
-LongitureAnnotation = Annotated[Longitude, StrictFloat]
-
 Latitude = NewType("Latitude", float)
-LatitudeAnnotation = Annotated[Latitude, StrictFloat]
 
 StampType = Literal["QRCode", "GPS"]
 SpotRewardType = Literal["Application"]
@@ -47,9 +42,9 @@ class StampRallySpot(BaseModel):
     gpsAcceptableRange: StrictInt  # =0
     id: StrictInt  # =58023
     stampRallyId: Literal[852]  # =852
-    spotLng: LongitureAnnotation  # =139.982586996195
-    spotLat: LatitudeAnnotation  # =35.6965389476619
-    spotId: SpotIdAnnotation  # =337568
+    spotLng: Annotated[Longitude, StrictFloat]  # =139.982586996195
+    spotLat: Annotated[Latitude, StrictFloat]  # =35.6965389476619
+    spotId: Annotated[SpotId, StrictInt]  # =337568
     spotRewards: None  # =None
     survey: None  # =None
     quizSelectorTexts: list[StrictStr]  # =[]
