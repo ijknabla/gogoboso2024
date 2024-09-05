@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 from bootstrap import load_boot_options
-from gobo2024.db import SpotLocation, Table
+from gobo2024.db import SpotLocation, SpotTitle, Table
 
 
 def main() -> None:
@@ -19,12 +19,20 @@ def main() -> None:
 
     with Session(engine) as session:
         for x in sorted(boot_options.stampRallySpots, key=lambda x: x.spotId):
-            location = SpotLocation(
-                id=x.spotId,
-                longitude=x.spotLng,
-                latitude=x.spotLat,
+            session.add(
+                SpotTitle(
+                    id=x.spotId,
+                    title=x.spotTitle,
+                )
             )
-            session.add(location)
+
+            session.add(
+                SpotLocation(
+                    id=x.spotId,
+                    longitude=x.spotLng,
+                    latitude=x.spotLat,
+                )
+            )
 
         session.commit()
 
