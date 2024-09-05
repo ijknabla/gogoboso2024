@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Annotated, Literal, NewType
 
 from pydantic import (
     BaseModel,
@@ -9,11 +9,16 @@ from pydantic import (
     StrictStr,
 )
 
+SpotId = NewType("SpotId", int)
+StampId = NewType("StampId", int)
+Longitude = NewType("Longitude", float)
+Latitude = NewType("Latitude", float)
+
 StampType = Literal["QRCode", "GPS"]
 SpotRewardType = Literal["Application"]
 PointCurrencyType = Literal["Unset"]
 SpotShareType = Literal["Public"]
-StampTypeText = Literal["QRCode", "GPS"]
+StampTypeText = StampType
 PointCurrencyTypeText = Literal["Unset"]
 SpotShareTypeText = Literal["Public"]
 SpotRewardSubType = Literal["Normal"]
@@ -38,9 +43,9 @@ class StampRallySpot(BaseModel):
     gpsAcceptableRange: StrictInt  # =0
     id: StrictInt  # =58023
     stampRallyId: Literal[852]  # =852
-    spotLng: StrictFloat  # =139.982586996195
-    spotLat: StrictFloat  # =35.6965389476619
-    spotId: StrictInt  # =337568
+    spotLng: Annotated[Longitude, StrictFloat]  # =139.982586996195
+    spotLat: Annotated[Latitude, StrictFloat]  # =35.6965389476619
+    spotId: Annotated[SpotId, StrictInt]  # =337568
     spotRewards: None  # =None
     survey: None  # =None
     quizSelectorTexts: list[StrictStr]  # =[]

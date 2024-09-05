@@ -5,6 +5,13 @@ description = "GOGO房総デジタルポイントラリー データベース 20
 authors = ["ijknabla <ijknabla@gmail.com>"]
 license = "MIT"
 readme = "README.md"
+include = [
+    "gobo2024/gobo2024.sqlite"
+]
+
+[tool.poetry.build]
+generate-setup-file = false
+script = "build.py"
 
 [tool.poetry.scripts]
 gobo2024 = "gobo2024.__main__:main"
@@ -32,7 +39,7 @@ pytest-asyncio = "^0.24.0"
 pytest-cov = "^5.0.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core", "pydantic>=2.8.2", "sqlalchemy>=2.0.32"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.mypy]
