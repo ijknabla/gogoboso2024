@@ -15,6 +15,13 @@ class SpotTitle(Table):
     text: Mapped[str] = mapped_column(String())
 
 
+class SpotStamp(Table):
+    __tablename__ = "spot.stamp"
+
+    spot_id: Mapped[types.SpotId] = mapped_column(Integer(), primary_key=True)
+    stamp_id: Mapped[types.StampId] = mapped_column(Integer(), primary_key=True)
+
+
 class SpotLocation(Table):
     __tablename__ = "spot.location"
 
