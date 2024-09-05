@@ -1,0 +1,6 @@
+runs:
+  using: "Composite"
+  steps:
+    - name: Install poetry
+      shell: bash
+      run: pipx install poetry

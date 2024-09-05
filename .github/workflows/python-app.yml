@@ -19,6 +19,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: ./.github/actions/setup-gobo2024
     - name: Install poetry
       run: pipx install poetry
     - name: Set up Python 3.10
