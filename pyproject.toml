@@ -6,6 +6,10 @@ authors = ["ijknabla <ijknabla@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 
+[tool.poetry.build]
+generate-setup-file = false
+script = "build.py"
+
 [tool.poetry.scripts]
 gobo2024 = "gobo2024.__main__:main"
 
