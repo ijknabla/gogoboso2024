@@ -13,30 +13,6 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-gobo2024
-    - name: Install dependencies
-      run: |
-        poetry install --only=main
-
-  dynamic-test:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-gobo2024
-    - name: Install dependencies
-      run: |
-        poetry install --only=main,dynamic-test
-    - name: Test with pytest
-      run: |
-        poetry run pytest
 
   static-test:
 
@@ -51,3 +27,17 @@ jobs:
     - name: Lint with ruff
       run: |
         poetry run ruff check
+
+  dynamic-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ./.github/actions/setup-gobo2024
+    - name: Install dependencies
+      run: |
+        poetry install --only=main,dynamic-test
+    - name: Test with pytest
+      run: |
+        poetry run pytest
