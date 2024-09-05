@@ -10,6 +10,7 @@ from pydantic import (
 )
 
 SpotId = NewType("SpotId", int)
+StampId = NewType("StampId", int)
 Longitude = NewType("Longitude", float)
 Latitude = NewType("Latitude", float)
 
@@ -17,7 +18,7 @@ StampType = Literal["QRCode", "GPS"]
 SpotRewardType = Literal["Application"]
 PointCurrencyType = Literal["Unset"]
 SpotShareType = Literal["Public"]
-StampTypeText = Literal["QRCode", "GPS"]
+StampTypeText = StampType
 PointCurrencyTypeText = Literal["Unset"]
 SpotShareTypeText = Literal["Public"]
 SpotRewardSubType = Literal["Normal"]
