@@ -1,4 +1,4 @@
-from sqlalchemy import Float, Integer
+from sqlalchemy import Float, Integer, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 from .types import Latitude, Longitude, SpotId
@@ -6,6 +6,13 @@ from .types import Latitude, Longitude, SpotId
 
 class Table(DeclarativeBase):
     pass
+
+
+class SpotTitle(Table):
+    __tablename__ = "spot.title"
+
+    id: Mapped[SpotId] = mapped_column(Integer(), primary_key=True)
+    title: Mapped[str] = mapped_column(String())
 
 
 class SpotLocation(Table):
