@@ -13,24 +13,32 @@ permissions:
   contents: read
 
 jobs:
-  build:
+
+  static-test:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
+    - uses: ./.github/actions/setup-gobo2024
     - name: Install dependencies
       run: |
-        pip install --upgrade pip
-        pip install poetry poetry-plugin-export
-        poetry export --without-hashes --only=main,static-test,dynamic-test | pip install -r /dev/stdin
+        poetry install --only=main,static-test,dynamic-test
     - name: Lint with ruff
       run: |
-        ruff check
+        poetry run ruff check
+        poetry run mypy --strict .
+
+  dynamic-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ./.github/actions/setup-gobo2024
+    - name: Install dependencies
+      run: |
+        poetry install --only=main,dynamic-test
     - name: Test with pytest
       run: |
-        pytest
+        poetry run pytest
