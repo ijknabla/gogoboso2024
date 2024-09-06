@@ -40,7 +40,7 @@ def main() -> None:
                 )
             )
 
-            session.add(db.SpotStamp(spot_id=x.spotId, stamp_id=stamp_id[x.stampType]))
+            session.add(db.SpotStamp(id=x.spotId, stamp_id=stamp_id[x.stampType]))
 
             session.add(
                 db.SpotLocation(

@@ -42,8 +42,8 @@ class SpotTitle(Table):
 class SpotStamp(Table):
     __tablename__ = "spot.stamp"
 
-    spot_id: Mapped[types.SpotId] = mapped_column(Integer(), primary_key=True)
-    stamp_id: Mapped[types.StampId] = mapped_column(Integer(), primary_key=True)
+    id: Mapped[types.SpotId] = mapped_column(Integer(), primary_key=True)
+    stamp_id: Mapped[types.StampId] = mapped_column(Integer())
 
 
 @_check_argument
