@@ -41,14 +41,17 @@ def test_boot_options(session: Session, boot_options: BootOptions) -> None:
         )
         assert spot_location is not None
 
-        assert spot == StampRallySpot(
-            checkinPoints=spot.checkinPoints,  # TODO: use database
-            spotId=spot.spotId,
-            spotTitle=spot_title.text,
-            stampType=stamp_type.text,
-            stampTypeText=stamp_type.text,
-            spotLng=spot_location.longitude,
-            spotLat=spot_location.latitude,
-            id=spot.id,  # NOTE: arbitary value
-            stampRallyIcon=spot.stampRallyIcon,  # NOTE: arbitary value
+        assert (
+            spot.model_dump()
+            == StampRallySpot(
+                checkinPoints=spot.checkinPoints,  # TODO: use database
+                spotId=spot.spotId,
+                spotTitle=spot_title.text,
+                stampType=stamp_type.text,
+                stampTypeText=stamp_type.text,
+                spotLng=spot_location.longitude,
+                spotLat=spot_location.latitude,
+                id=spot.id,  # NOTE: arbitary value
+                stampRallyIcon=spot.stampRallyIcon,  # NOTE: arbitary value
+            ).model_dump()
         )
