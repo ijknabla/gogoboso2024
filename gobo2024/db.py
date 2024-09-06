@@ -1,10 +1,21 @@
+from __future__ import annotations
+
 from functools import cache
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from sqlalchemy import Engine, Float, Integer, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
-from . import types
+from . import types  # noqa: TCH001
+
+if TYPE_CHECKING:
+    from dataclasses import dataclass as _check_argument
+
+else:
+
+    def _check_argument(x: object) -> object:
+        return x
 
 
 @cache
@@ -19,6 +30,7 @@ class Table(DeclarativeBase):
     pass
 
 
+@_check_argument
 class SpotTitle(Table):
     __tablename__ = "spot.title"
 
@@ -26,6 +38,7 @@ class SpotTitle(Table):
     text: Mapped[str] = mapped_column(String())
 
 
+@_check_argument
 class SpotStamp(Table):
     __tablename__ = "spot.stamp"
 
@@ -33,6 +46,7 @@ class SpotStamp(Table):
     stamp_id: Mapped[types.StampId] = mapped_column(Integer(), primary_key=True)
 
 
+@_check_argument
 class SpotLocation(Table):
     __tablename__ = "spot.location"
 
@@ -41,6 +55,7 @@ class SpotLocation(Table):
     latitude: Mapped[types.Latitude] = mapped_column(Float())
 
 
+@_check_argument
 class StampType(Table):
     __tablename__ = "stamp.type"
 
