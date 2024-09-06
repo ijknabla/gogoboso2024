@@ -70,6 +70,8 @@ ignore = [
     "D205", "D404",
     # Ignore security rules
     "S311",
+    # Ignore TODO rules
+    "TD002", "TD003", "FIX002",
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
