@@ -1,7 +1,6 @@
 from pathlib import Path
 from typing import cast
 
-from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
 from bootstrap import load_boot_options
@@ -10,10 +9,9 @@ from gobo2024.types import StampId, StampType
 
 
 def main() -> None:
-    path = (Path(__file__) / "../gobo2024/gobo2024.sqlite").resolve()
-    if path.exists():
+    engine = db.create_engine()
+    if engine.url.database is not None and Path(engine.url.database).exists():
         return
-    engine = create_engine(f"sqlite:///{path}")
 
     # CREATE TABLE
     db.Table.metadata.create_all(engine)
