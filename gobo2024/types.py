@@ -40,8 +40,8 @@ class StampRallySpot(BaseModel):
     spotId: Annotated[SpotId, StrictInt]  # =337568
     spotRewards: None = None
     survey: None = None
-    quizSelectorTexts: list[StrictStr]  # =[]
-    spotGroupIds: list[StrictInt]  # =[]
+    quizSelectorTexts: list[StrictStr] = []
+    spotGroupIds: list[StrictInt] = []
     stampType: StampType  # ='QRCode'
     spotRewardType: Literal["Application"] = "Application"
     pointCurrencyType: Literal["Unset"] = "Unset"

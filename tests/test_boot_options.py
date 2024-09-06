@@ -43,8 +43,6 @@ def test_boot_options(session: Session, boot_options: BootOptions) -> None:
 
         assert spot == StampRallySpot(
             checkinPoints=spot.checkinPoints,  # TODO: use database
-            quizSelectorTexts=[],
-            spotGroupIds=[],
             spotId=spot.spotId,
             spotTitle=spot_title.text,
             stampType=stamp_type.text,
