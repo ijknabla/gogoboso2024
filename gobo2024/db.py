@@ -1,7 +1,18 @@
-from sqlalchemy import Float, Integer, String
+from functools import cache
+from pathlib import Path
+
+from sqlalchemy import Engine, Float, Integer, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 from . import types
+
+
+@cache
+def create_engine() -> Engine:
+    from sqlalchemy import create_engine
+
+    path = Path(__file__) / "../gobo2024.sqlite"
+    return create_engine(f"sqlite:///{path.resolve()}")
 
 
 class Table(DeclarativeBase):
