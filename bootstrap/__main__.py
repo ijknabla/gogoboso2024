@@ -4,7 +4,7 @@ from importlib.resources import as_file, files
 
 import click
 
-from gobo2024.scraping import open_page, scrape_boot_options
+from .scraping import open_page, scrape_boot_options
 
 
 @click.group()

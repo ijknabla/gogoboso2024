@@ -6,8 +6,8 @@ from typing import TYPE_CHECKING
 
 from pyppeteer import launch
 
-from .protocol import closing
-from .types import BootOptions
+from gobo2024.protocol import closing
+from gobo2024.types import BootOptions
 
 if TYPE_CHECKING:
     from collections.abc import AsyncIterator
