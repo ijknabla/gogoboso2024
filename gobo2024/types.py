@@ -14,13 +14,6 @@ Longitude = NewType("Longitude", float)
 Latitude = NewType("Latitude", float)
 
 StampType = Literal["QRCode", "GPS"]
-SpotRewardType = Literal["Application"]
-PointCurrencyType = Literal["Unset"]
-SpotShareType = Literal["Public"]
-StampTypeText = StampType
-PointCurrencyTypeText = Literal["Unset"]
-SpotShareTypeText = Literal["Public"]
-SpotRewardSubType = Literal["Normal"]
 
 
 class StampRallySpot(BaseModel):
@@ -50,19 +43,19 @@ class StampRallySpot(BaseModel):
     quizSelectorTexts: list[StrictStr]  # =[]
     spotGroupIds: list[StrictInt]  # =[]
     stampType: StampType  # ='QRCode'
-    spotRewardType: SpotRewardType  # ='Application'
-    pointCurrencyType: PointCurrencyType  # ='Unset'
-    spotShareType: SpotShareType  # ='Public'
-    stampTypeText: StampTypeText  # ='QRCode'
-    pointCurrencyTypeText: PointCurrencyTypeText  # ='Unset'
-    spotShareTypeText: SpotShareTypeText  # ='Public'
+    spotRewardType: Literal["Application"] = "Application"
+    pointCurrencyType: Literal["Unset"] = "Unset"
+    spotShareType: Literal["Public"] = "Public"
+    stampTypeText: StampType  # ='QRCode'
+    pointCurrencyTypeText: Literal["Unset"] = "Unset"
+    spotShareTypeText: Literal["Public"] = "Public"
     samplePhotoDescription: None = None
     samplePhotoUrl: None = None
     spotTitle: StrictStr  # ='街のピザ屋\u3000コンパーレ\u3000コマーレ'
     keywordImageUrl: None = None
     keywordDescription: None = None
     keywordTitle: None = None
-    spotRewardSubType: SpotRewardSubType  # ='Normal'
+    spotRewardSubType: Literal["Normal"] = "Normal"
     spotRewardDescription: None = None
     spotRewardTitle: None = None
     spotRewardBannerUrl: None = None
