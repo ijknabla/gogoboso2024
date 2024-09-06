@@ -3738,7 +3738,7 @@
    "spotRewardTitle": null,
    "spotRewardBannerUrl": null,
    "stampRallyBaseIcon": null,
-   "stampRallyIcon": "https://platinumaps.blob.core.windows.net/maps/857/spots/337070/stamprally/852.webp?v=638604147042984466"
+   "stampRallyIcon": "https://platinumaps.blob.core.windows.net/maps/857/spots/337070/stamprally/852.webp?v=638611741032795001"
   },
   {
    "isPublicSpot": true,
@@ -13306,8 +13306,8 @@
  "zoom": 15,
  "mapId": 857,
  "eventHubContext": {
-  "sas": "SharedAccessSignature sr=https%3a%2f%2fplatinumaps.servicebus.windows.net%2fevents%2fpublishers%2ff1e762bd-e7b6-495d-9233-48855546b716%2fmessages&sig=0mu1pao1P7duoPb9wvvX2Sf1xrzgTlun7PJ98GXJ3N8%3d&se=1728106154&skn=BrowserSendPolicy",
-  "uri": "https://platinumaps-proxy.azurewebsites.net/eventhubs/events/publishers/f1e762bd-e7b6-495d-9233-48855546b716/messages"
+  "sas": "SharedAccessSignature sr=https%3a%2f%2fplatinumaps.servicebus.windows.net%2fevents%2fpublishers%2f0dfa5b89-321c-46d3-91e7-7fdb568021e5%2fmessages&sig=Mw3Z4U3Yvj%2f43UIdYqxCcqvpsPs0nxoSb%2fs13fBX8AY%3d&se=1728179203&skn=BrowserSendPolicy",
+  "uri": "https://platinumaps-proxy.azurewebsites.net/eventhubs/events/publishers/0dfa5b89-321c-46d3-91e7-7fdb568021e5/messages"
  },
  "area": {
   "west": 0,
