@@ -3456,11 +3456,11 @@
    "survey": null,
    "quizSelectorTexts": [],
    "spotGroupIds": [],
-   "stampType": "GPS",
+   "stampType": "QRCode",
    "spotRewardType": "Application",
    "pointCurrencyType": "Unset",
    "spotShareType": "Public",
-   "stampTypeText": "GPS",
+   "stampTypeText": "QRCode",
    "pointCurrencyTypeText": "Unset",
    "spotShareTypeText": "Public",
    "samplePhotoDescription": null,
@@ -3474,7 +3474,7 @@
    "spotRewardTitle": null,
    "spotRewardBannerUrl": null,
    "stampRallyBaseIcon": null,
-   "stampRallyIcon": "https://platinumaps.blob.core.windows.net/maps/857/spots/337076/stamprally/852.png?v=638606040584406883"
+   "stampRallyIcon": "https://platinumaps.blob.core.windows.net/maps/857/spots/337076/stamprally/852.png?v=638612858135845691"
   },
   {
    "isPublicSpot": true,
