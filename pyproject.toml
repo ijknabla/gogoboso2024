@@ -69,7 +69,7 @@ ignore = [
     "COM812",
     "ISC001",
     # Ignore not important rules
-    "ANN101",
+    "ANN101", "ANN401",
     "D100", "D101", "D102", "D103", "D104", "D106", "D107",
     "D205", "D404",
     # Ignore security rules
