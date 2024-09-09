@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import csv
 from pathlib import Path
+from typing import IO
 
 import click
 from polars import DataFrame, DataType, Datetime, String, UInt32, col, read_csv
@@ -11,7 +13,11 @@ from gobo2024 import db
 
 @click.command()
 @click.option("--log-csv", type=click.Path(exists=True, dir_okay=False, path_type=Path))
-def main(log_csv: Path | None = None) -> None:
+@click.option("--togo", type=click.File(mode="w", encoding="utf-8-sig"))
+def main(
+    log_csv: Path | None = None,
+    togo: IO[str] | None = None,
+) -> None:
     if log_csv is None:
         log_csv = Path(__file__, "../log.csv").resolve()
 
@@ -29,7 +35,9 @@ def main(log_csv: Path | None = None) -> None:
         .with_row_index(name="row", offset=2)
     )
 
-    with Session(db.create_engine()) as s:
+    engine = db.create_engine()
+
+    with Session(engine) as s:
         spot_titles = []
 
         for row, id_in_csv, title_in_csv in log.select(
@@ -40,13 +48,13 @@ def main(log_csv: Path | None = None) -> None:
                 .filter(db.SpotTitle.id == id_in_csv)
                 .all()
             ):
-                (spot_title,) = by_id
+                (title,) = by_id
             elif title_in_csv is not None and (
                 by_title := s.query(db.SpotTitle)
                 .filter(db.SpotTitle.text.contains(title_in_csv))
                 .all()
             ):
-                spot_title, *rest = by_title
+                title, *rest = by_title
                 if rest:
                     candidates = sorted(x.text for x in by_title)
                     message = (
@@ -58,7 +66,7 @@ def main(log_csv: Path | None = None) -> None:
                 message = f"{row=!r}: {id_in_csv=!r}, {title_in_csv=!r}"
                 raise ValueError(message)
 
-            spot_titles.append(spot_title)
+            spot_titles.append(title)
 
         log = log.update(
             DataFrame(
@@ -68,7 +76,41 @@ def main(log_csv: Path | None = None) -> None:
                 }
             )
         )
+
     log.select(*dtypes).write_csv(log_csv, include_bom=True)
+
+    if togo:
+        acquired = set(log["id"])
+
+        writer = csv.writer(togo)
+        writer.writerow(["名前", "種類", "経度", "緯度"])
+
+        with Session(engine) as s:
+            for title in (
+                s.query(db.SpotTitle).filter(db.SpotTitle.id.not_in(acquired)).all()
+            ):
+                stamp_id = (
+                    s.query(db.SpotStamp.stamp_id)
+                    .filter(db.SpotStamp.id == title.id)
+                    .scalar_subquery()
+                )
+                stamp_type = (
+                    s.query(db.StampType).filter(db.StampType.id == stamp_id).first()
+                )
+                if stamp_type is None:
+                    raise RuntimeError
+
+                location = (
+                    s.query(db.SpotLocation)
+                    .filter(db.SpotLocation.id == title.id)
+                    .first()
+                )
+                if location is None:
+                    raise RuntimeError
+
+                writer.writerow(
+                    [title.text, stamp_type.text, location.longitude, location.latitude]
+                )
 
 
 if __name__ == "__main__":
