@@ -41,7 +41,7 @@ def main(log_csv: Path | None = None) -> None:
                 .all()
             ):
                 (spot_title,) = by_id
-            elif (
+            elif title_in_csv is not None and (
                 by_title := s.query(db.SpotTitle)
                 .filter(db.SpotTitle.text.contains(title_in_csv))
                 .all()
