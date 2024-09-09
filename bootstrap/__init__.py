@@ -17,3 +17,5 @@ def load_boot_options() -> BootOptions:
         boot_options_io = enter(boot_options_path.open("r", encoding="utf-8"))
 
         return BootOptions.model_validate(json.load(boot_options_io))
+
+    raise NotImplementedError
