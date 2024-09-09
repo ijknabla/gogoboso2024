@@ -76,5 +76,7 @@ class BootOptions(BaseModel):
     stampRallySpots: list[StampRallySpot]
 
     # mapId: int
-    eventHubContext: EventHubContext
+    eventHubContext: EventHubContext | None = (
+        None  # NOTE: 実行のたびに変化するので省略可能
+    )
     # area: ...
