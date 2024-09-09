@@ -63,7 +63,18 @@ class StampRallySpot(BaseModel):
     stampRallyIcon: StrictStr  # ='https://platinumaps.blob.core.windows.net/maps/857/spots/337568/stamprally/852.webp?v=638604079352646211'
 
 
+class EventHubContext(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    sas: str  # ="SharedAccessSignature sr=https%3a%2f%2fplatinumaps.servicebus.windows.net%2fevents%2fpublishers%2fc7878c34-bbf3-42b0-ab9a-13c5720e7ebf%2fmessages&sig=AbvgHJvLupMRszjLZUaamGrs38fVEZRL2YFH6pJY%2fA4%3d&se=1728439583&skn=BrowserSendPolicy"  # noqa: E501
+    uri: str  # ="https://platinumaps-proxy.azurewebsites.net/eventhubs/events/publishers/c7878c34-bbf3-42b0-ab9a-13c5720e7ebf/messages"
+
+
 class BootOptions(BaseModel):
     model_config = ConfigDict(extra="allow")
 
     stampRallySpots: list[StampRallySpot]
+
+    # mapId: int
+    eventHubContext: EventHubContext
+    # area: ...
