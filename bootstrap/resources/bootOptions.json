@@ -482,7 +482,7 @@
    "spotRewardTitle": null,
    "spotRewardBannerUrl": null,
    "stampRallyBaseIcon": null,
-   "stampRallyIcon": "https://platinumaps.blob.core.windows.net/maps/857/spots/337558/stamprally/852.webp?v=638599077105179591"
+   "stampRallyIcon": "https://platinumaps.blob.core.windows.net/maps/857/spots/337558/stamprally/852.webp?v=638615200171062788"
   },
   {
    "isPublicSpot": true,
@@ -3845,8 +3845,8 @@
    "gpsAcceptableRange": 0,
    "id": 58143,
    "stampRallyId": 852,
-   "spotLng": 140.098622,
-   "spotLat": 35.599171,
+   "spotLng": 140.097889576163,
+   "spotLat": 35.6004047113066,
    "spotId": 337067,
    "spotRewards": null,
    "survey": null,
@@ -3870,7 +3870,7 @@
    "spotRewardTitle": null,
    "spotRewardBannerUrl": null,
    "stampRallyBaseIcon": null,
-   "stampRallyIcon": "https://platinumaps.blob.core.windows.net/maps/857/spots/337067/stamprally/852.png?v=638604150521093554"
+   "stampRallyIcon": "https://platinumaps.blob.core.windows.net/maps/857/spots/337067/stamprally/852.png?v=638614541556717971"
   },
   {
    "isPublicSpot": true,
@@ -13573,7 +13573,7 @@
      "textColor": "",
      "color": "#00b8d4",
      "descriptionHtml": null,
-     "description": "●ベイエリアコース\r\n●東葛西コースコース\r\n●かずさ・臨海コース\r\n●九十九里コース\r\n●北総コース\r\n●南房総コース",
+     "description": "●ベイエリアコース\r\n●東葛飾コース\r\n●かずさ・臨海コース\r\n●九十九里コース\r\n●北総コース\r\n●南房総コース",
      "name": "６つのモデルコース"
     }
    ],
@@ -13589,8 +13589,8 @@
    "banner": null,
    "miniBanner": null,
    "markerImageUrl": null,
-   "highlightImageUrl": "https://platinumaps.blob.core.windows.net/maps/857/category/26736_highlight.png?v=638592969042150840",
-   "imageUrl": "https://platinumaps.blob.core.windows.net/maps/857/category/26736.png?v=638592969042150840",
+   "highlightImageUrl": "https://platinumaps.blob.core.windows.net/maps/857/category/26736_highlight.png?v=638615197075133332",
+   "imageUrl": "https://platinumaps.blob.core.windows.net/maps/857/category/26736.png?v=638615197075133332",
    "mapCategoryGroup": "route1",
    "categoryName": "モデルコース"
   },
@@ -14187,6 +14187,7 @@
    "useMaxCheckinLimit": false,
    "hasRewardRequest": false,
    "isStartingStampRally": false,
+   "useRewardGrouping": false,
    "useNewLapByRewardRequest": false,
    "useHiddenStampRewardUsed": false,
    "isPreview": false,
@@ -14244,6 +14245,7 @@
      "hasRewardRequest": false,
      "pointEnabled": true,
      "useRewardExchangeSpot": false,
+     "maxSelectItems": 0,
      "maxApplyCount": 0,
      "requiredSpotsCount": 0,
      "sortOrder": 1,
@@ -14268,6 +14270,7 @@
      "rewardPeriodTo": null,
      "rewardPeriodFrom": null,
      "takeRewardVideoUrl": null,
+     "maxSelectItemsDescription": null,
      "ticketCompletionMessage": null,
      "ticketConfirmationMessage": null,
      "ticketAttentionMessage": null,
@@ -14278,7 +14281,7 @@
      "rewardCompleteMessage": "見事30ポイント獲得おめでとうございます！\r\n45名様に抽選でA賞品をプレゼント！",
      "rewardSubDescription": "美味しい温泉　夢みさきで\r\n使えるホテル補助券（15000円分）が当たります！\r\n",
      "rewardSubTitle": "A賞（ホテル補助券）",
-     "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-1/5213.png?v=638608320054396688"
+     "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-1/5213.png?v=638615196068893594"
     },
     {
      "isSeriesReward": false,
@@ -14291,6 +14294,7 @@
      "hasRewardRequest": false,
      "pointEnabled": true,
      "useRewardExchangeSpot": false,
+     "maxSelectItems": 1,
      "maxApplyCount": 0,
      "requiredSpotsCount": 0,
      "sortOrder": 2,
@@ -14311,14 +14315,14 @@
        "Price": 0.0,
        "CurrencyType": 0,
        "ItemId": 2087,
-       "ItemBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointitembanner-2-1/2087.webp?v=638608320053987287",
+       "ItemBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointitembanner-2-1/2087.webp?v=638615196068479549",
        "ItemTitle": "Sghr タンブラー（２個）とKYONAN BEER（2本）"
       },
       {
        "Price": 0.0,
        "CurrencyType": 0,
        "ItemId": 2088,
-       "ItemBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointitembanner-2-2/2088.webp?v=638608320053987287",
+       "ItemBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointitembanner-2-2/2088.webp?v=638615196068479549",
        "ItemTitle": "千葉県お菓子セット"
       }
      ],
@@ -14330,6 +14334,7 @@
      "rewardPeriodTo": null,
      "rewardPeriodFrom": null,
      "takeRewardVideoUrl": null,
+     "maxSelectItemsDescription": null,
      "ticketCompletionMessage": null,
      "ticketConfirmationMessage": null,
      "ticketAttentionMessage": null,
@@ -14340,7 +14345,7 @@
      "rewardCompleteMessage": "見事10ポイント獲得おめでとうございます！\r\nSghr タンブラー（２個）とKYONAN BEER（2本）又は千葉県お菓子セットを選択し応募ができます！",
      "rewardSubDescription": "Sghr タンブラー（２個）とKYONAN BEER（2本）又は\r\n千葉県お菓子セットが抽選で105名様に当たります。",
      "rewardSubTitle": "B賞",
-     "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-2/5214.png?v=638608320054396688"
+     "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-2/5214.png?v=638615196068893594"
     },
     {
      "isSeriesReward": false,
@@ -14353,6 +14358,7 @@
      "hasRewardRequest": false,
      "pointEnabled": true,
      "useRewardExchangeSpot": false,
+     "maxSelectItems": 0,
      "maxApplyCount": 0,
      "requiredSpotsCount": 0,
      "sortOrder": 3,
@@ -14377,6 +14383,7 @@
      "rewardPeriodTo": null,
      "rewardPeriodFrom": null,
      "takeRewardVideoUrl": null,
+     "maxSelectItemsDescription": null,
      "ticketCompletionMessage": null,
      "ticketConfirmationMessage": null,
      "ticketAttentionMessage": null,
@@ -14387,7 +14394,7 @@
      "rewardCompleteMessage": "参加者特典★チーバくんオリジナルカレンダーダウンロード！",
      "rewardSubDescription": "参加者特典としてチーバくんオリジナルカレンダーをダウンロードしていただけます！",
      "rewardSubTitle": "参加賞（参加者特典）",
-     "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-3/5215.webp?v=638608320054396688"
+     "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-3/5215.webp?v=638615196068893594"
     },
     {
      "isSeriesReward": false,
@@ -14400,6 +14407,7 @@
      "hasRewardRequest": false,
      "pointEnabled": false,
      "useRewardExchangeSpot": false,
+     "maxSelectItems": 0,
      "maxApplyCount": 0,
      "requiredSpotsCount": 0,
      "sortOrder": 4,
@@ -14424,6 +14432,7 @@
      "rewardPeriodTo": null,
      "rewardPeriodFrom": null,
      "takeRewardVideoUrl": null,
+     "maxSelectItemsDescription": null,
      "ticketCompletionMessage": null,
      "ticketConfirmationMessage": null,
      "ticketAttentionMessage": null,
@@ -14447,6 +14456,7 @@
      "hasRewardRequest": false,
      "pointEnabled": false,
      "useRewardExchangeSpot": false,
+     "maxSelectItems": 0,
      "maxApplyCount": 0,
      "requiredSpotsCount": 0,
      "sortOrder": 5,
@@ -14471,6 +14481,7 @@
      "rewardPeriodTo": null,
      "rewardPeriodFrom": null,
      "takeRewardVideoUrl": null,
+     "maxSelectItemsDescription": null,
      "ticketCompletionMessage": null,
      "ticketConfirmationMessage": null,
      "ticketAttentionMessage": null,
@@ -14494,6 +14505,7 @@
      "hasRewardRequest": false,
      "pointEnabled": false,
      "useRewardExchangeSpot": false,
+     "maxSelectItems": 0,
      "maxApplyCount": 0,
      "requiredSpotsCount": 0,
      "sortOrder": 6,
@@ -14518,6 +14530,7 @@
      "rewardPeriodTo": null,
      "rewardPeriodFrom": null,
      "takeRewardVideoUrl": null,
+     "maxSelectItemsDescription": null,
      "ticketCompletionMessage": null,
      "ticketConfirmationMessage": null,
      "ticketAttentionMessage": null,
@@ -15006,21 +15019,21 @@
    "rewardDescription": "第一回　9/2-11/30\r\n【A賞】美味しい温泉　夢みさき　 宿泊補助券15000円相当45名様\r\n【B賞】Sghr タンブラー（２個）とKYONAN BEER(1本）セット\r\nまたは、千葉県のお菓子セット105名様\r\n【C賞】参加者全員にダウンロードしていただけるチーバくんオリジナルカレンダー\r\n第二回12/1-2/28\r\n【A賞】房総鴨川温泉　是空ーZEKKU-　宿泊補助券15000円相当45名様\r\n【B賞】おうちで豚しゃぶセット又は千葉県サーメンセット105名様\r\n【参加賞】参加者全員にダウンロードしていただけるチーバくんオリジナルカレンダー\r\n",
    "rewardTitle": "千葉県の魅力が詰まった 素敵な賞品を合計300名様にプレゼント！",
    "rewardMiniBanner": null,
-   "rewardBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardbanner/799.png?v=638608320053987287",
+   "rewardBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardbanner/799.png?v=638615196068479549",
    "scheduleEnd": "2025年2月28日まで",
    "schedule": "2024年9月2日 ～ 2025年2月28日",
    "icon": null,
-   "stampBaseIcon": "https://platinumaps.blob.core.windows.net/maps/857/stampbaseicon/852.png?v=638608320053987287",
+   "stampBaseIcon": "https://platinumaps.blob.core.windows.net/maps/857/stampbaseicon/852.png?v=638615196068479549",
    "qrCodeProcessingType": "None",
    "terms": "スタンプラリー実施について\r\n・本デジタルスタンプラリーをご利用いただくにあたり、以下の環境を推奨しております。\r\n\r\n■利用推奨環境\r\niPhoneの場合:iOS 13 以降+Safari(ブラウザ)\r\nAndroidの場合:Android 10 以降+Chrome(ブラウザ)\r\n\r\n・上記OSのスマートフォンに搭載されているブラウザ以外は推奨しておりません。 スタンプラリーの参加はスマートフォンからのみ可能であり、パソコン、タブレット、フィーチャーフォンは非対応となります。\r\n・スマートフォン端末に関するご不明点は、ご契約中の通信会社へお問い合わせ下さい。\r\n・スタンプラリーに参加後、スマートフォンの機種変更された場合、獲得済みスタンプの情報が保持されず、最初からのスタートとなります。\r\n・利用ブラウザのCookieの受け入れ設定を有効にしてからご参加ください。無効のまま参加されますとスタンプ情報が保持されませんのでご注意ください。\r\n・Cookieはブラウザごとに異なります。スタンプラリー開始後は、必ず同じブラウザを利用して下さい。異なるブラウザでアクセスした場合は、スタンプ情報が保持されません。\r\n・iPhoneにおけるSafariブラウザのプライベートモード、またAndroidにおけるChromeブラウザのシークレットモードは「オフ」にしてご参加ください。これらが「オン」の場合、Cookie情報が自動削除され、スタンプ情報が保持されません。\r\n・Cookieを削除すると、獲得済みスタンプの情報が削除されますので、ご注意ください。\r\n・動作確認済みの上記スマートフォン以外の一部スマートフォンでは、スタンプラリーにご参加いただけない場合がございます。予めご了承ください。\r\n\r\nご注意事項\r\n・営業時間の変更や施設が利用できない場合があります。事前にご確認の上、お出かけください。\r\n・スタンプポイントは予告なく変更になる場合がございます。最新のスタンプポイントは、スタンプラリーサイトからご確認ください。\r\n・イベントは予告なく変更、中止する場合がございます。\r\n\r\n免責事項\r\n当スタンプラリー の運営に細心の注意を払っておりますが、掲載コンテンツ、各種サービス、その他当スタンプラリーに関するすべての事項について、その正確性、有用性、確実性、安全性等について保証するものではありません。また、以下の場合において利用者または第三者が被る損害について、一切責任を負うものではありません。\r\n\r\n・利用者より正確なデータを入力がなされず、利用者が賞品を受領できない場合\r\n・当スタンプラリーを利用すること及び利用することができなかったことにより、直接的または間接的に損失が生じた場合\r\n・当スタンプラリーの利用に関して、ハードウェアやソフトウェア上の障害が生じた場合\r\n・当スタンプラリーへの、第三者による情報改ざんや妨害によるサービスの中断及び遅延により、何らかの損失が生じた場合\r\n・推奨する閲覧環境以外からアクセスしたことにより、サービスの利用ができない場合\r\n・主催者に故意または重大な過失なく、サービスの欠陥や情報の誤送信が生じた場合\r\n\r\nその他事項\r\n・スタンプ取得に際し、不正行為が発覚した場合は、参加登録は即時解除し、賞品応募もすべて無効となります。\r\n・賞品応募でご入力いただいた個人情報はスタンプラリーの運用（プレゼント当選者へ賞品発送のため配送伝票への記載を含む）にのみ、使用するものとします。（法令等により開示を求められた場合を除く。）\r\n・個人情報は「個人情報保護法」に基づき、適切に管理します。\r\n・当選者の権利の第三者への譲渡・換金・転売等は一切できません。\r\n・QRコードは(株)デンソーウェーブの登録商標です。\r\n\r\nその他イベントに関するご不明な点等は事務局までお問い合わせ下さい。\r\n\r\nQ＆A\r\nQ. スタンプラリーに参加するために必要な環境は？\r\nA．以下の条件を満たした「スマートフォン」と「ブラウザ」が必要です。\r\n・インターネット接続（通信料は参加者様のご負担となります。）\r\n・カメラやQRコード読取アプリからの、QRコード読み取り\r\n\r\n【【操作環境】\r\n●iPhoneをご使用の方：iOS13以降＋Safari（ブラウザ）\r\n●Androidをご使用の方：Android 10以降＋Chrome（ブラウザ）\r\n※パソコン、タブレット、フィーチャーフォン（ガラケー）からご参加いただく事はできません。\r\n\r\nQ.スタンプの獲得（QRコードの読み取り）方法について知りたい。\r\nA．ご使用中の機種により、以下の通り操作をします。\r\n●iPhoneをご使用の方\r\n標準カメラ機能を使用し、読み取ってください。\r\n※外部QRコード読取アプリや、ウィジェットを使用すると、スタンプが保持されません。\r\n\r\n●Androidをご使用の方\r\nお使いのQRコード読取アプリを使用し、読み取ってください。\r\n\r\n■スタンプ獲得までの流れ\r\n（１）まだスタンプを１つも獲得されていない場合\r\n①特設サイト、イベントポスター、チラシ内にある、「スタンプラリー参加用QRコード」を読み取るか、対象スポットに設置されているQRコードを読み取り、スタンプラリーサイトに移行。\r\n②アンケートへの回答、利用規約に同意し、「はじめる」をクリック。\r\n（①で対象スポットに設置されているQRコードを読み取った場合、この時点でスタンプを獲得）\r\n③マップから目的の対象スポットを選択し、「スタンプを押す」をクリック。\r\n④カメラへのアクセスを求められるので、「許可」をクリックし、カメラで対象スポットに設置されているQRコードを読み取るとスタンプ獲得。\r\n\r\n（２）２つ目以降のスタンプを獲得する場合\r\n①スマートフォンの標準カメラ機能（AndroidはQRコード読取アプリ）で対象スポットに設置されているQRコードを読み取るか、もしくは、上記（１）の③④と同様の手順でスタンプを獲得。\r\n\r\n\r\nQ.獲得したはずのスタンプが消えてしまう-\r\nA．以下の場合は獲得したスタンプ履歴が保存されませんのでご注意ください。\r\n・プライベートブラウズモード、シークレットモードでの使用（通常モードでご使用ください。）\r\n・アプリ内ブラウザの使用（ブラウザは、iPhoneの方はSafariを、Androidの方はChromeをご使用ください。）\r\n・複数のブラウザの使用（必ず１種類のブラウザをご使用ください。）\r\n\r\n※以下の場合は、獲得したスタンプ履歴が消えてしまいますのでご注意ください。\r\n・スマートフォンのキャッシュ、Cookieの削除\r\n・買い換え等によるスマートフォンの変更\r\n\r\n推奨環境のブラウザ以外を利用した場合、スタンプが保存されません。必ず推奨環境ブラウザを利用してください（iPhoneの場合: Safari、Androidの場合: Chrome）。QRコードリーダーアプリを利用すると、スタンプが保存されない場合があります。\r\n\r\nQ．獲得したはずのスタンプが未獲得スタンプとして扱われてしまう。\r\nA．ブラウザの再読み込み（リロード）をタップし、サイトを最新の状態にします。\r\n",
    "wideMiniBanner": null,
-   "miniBanner": "https://platinumaps.blob.core.windows.net/maps/857/stamprallyminibanner/852.jpg?v=638608320053987287",
+   "miniBanner": "https://platinumaps.blob.core.windows.net/maps/857/stamprallyminibanner/852.jpg?v=638615196068479549",
    "entryPageBanner": null,
-   "banner": "https://platinumaps.blob.core.windows.net/maps/857/stamprallybanner/852.jpg?v=638608320053987287",
+   "banner": "https://platinumaps.blob.core.windows.net/maps/857/stamprallybanner/852.jpg?v=638615196068479549",
    "mainPageIconType": "PatternA",
    "howToPlay": "１、マップから行きたいスポットを見つけます\r\n２、スポットへ向かいましょう！\r\n３、スポットに到着したらGPSにてポイントをGET! 飲食店の場合はスポットに設置されているQRコードをスマートフォンの標準カメラで読み込みポイントGET!\r\n４、応募条件に該当するポイント数が貯まったら「特典へ応募」から応募します！\r\n\r\n【必ずお読みください】\r\n①QRコードを読み取る際の注意事項ご使用中の機種により下記の通り操作をします。\r\n●iPhoneをご利用の方：標準カメラ機能を使用し、読み取ってください。\r\n※外部QRコード読み取りアプリはヴィジェットを使用するとスタンプが保持されません。\r\n●Androidをご利用の方：お使いのQRコードアプリを使用し読み取ってください。\r\n\r\n②スタンプラリー参加中の注意事項\r\n本スタンプラリーはWebブラウザを使用したスタンプラリーですので参加中は下記の操作にご注意ください。\r\n×キャッシュの消去、Cookieの削除、プライベートブラウズモードでの使用。（獲得したスタンプが消えてしまいます）\r\n必ず同一のブラウザ（iPhoneの方はSafari、Androidの方はChrome）を使用\r\n賞品は第１回（9月2日～11月30日）第２回（12月1日～2月28日）応募条件は下記になります\r\n・A賞（各45名）30ポイント ・B賞（各105名）10ポイント\r\n※全部のスタンプをGETした方には当選確率が上がります。\r\nポイントの付与について\r\n・観光スポット：１ポイント\r\n・モデルルートに含まれるスポット：３ポイント（飲食店スポットがモデルコースに入っていても３ポイント）\r\n・飲食店スポット：３ポイント\r\n\r\n【ラブちば優待対応施設について】\r\n各施設の説明文の下に、ラブちば優待対象施設＋記載の上 特典内容を記載しております。\r\n画像の最後にあるラブちば優対証をお店のスタッフに提示して頂けると特典を受けて頂けるようになりますのでぜひご活用ください。\r\n",
    "mainDescription": null,
-   "description": "スマートフォン等を使って様々な千葉県の魅力に触れられる観光スポットや飲食店を巡る「GOGO房総デジタルポイントラリー」です！観光スポットはGPS機能・飲食店はQRコードを読み取ることでをスタンプを獲得できます。各スポットを自由に巡る楽しみ方に加え、モデルコースもご用意！A賞への応募は30ポイント、B賞への応募は10ポイントで行うことができます。賞品も県産品のほか、千葉県内にある宿泊施設の宿泊補助券など豪華賞品もご用意しております！\r\n参加者全員にダウンロードして使えるチーバくんのカレンダーもご用意。\r\nまたラブちば優待券も掲載している施設もありますので、各スポットの画像の最後に掲載している「ラブちば優待証」をお店のスタッフにご提示いただくとそれぞれのスポットで特典を受けられますのでご活用ください。\r\n※ラブちば優待証の内容に関しては各ページでご確認ください。\r\n\r\n千葉県の魅力情報が掲載された千葉観光ナビwebページもご覧ください。\r\n千葉観光ナビ：https://maruchiba.jp/gogobousou-pointrally/　　　\r\n\r\n\r\n問い合わせ／「GOGO房総デジタルポイントラリーキャンペーン事務局」\r\n Mail：gogoboso.pointrally2024@r.recruit.co.jp",
+   "description": "スマートフォン等を使って様々な千葉県の魅力に触れられる観光スポットや飲食店を巡る「GOGO房総デジタルポイントラリー」です！観光スポットはGPS機能・飲食店はQRコードを読み取ることでをスタンプを獲得できます。各スポットを自由に巡る楽しみ方に加え、モデルコースもご用意！A賞への応募は30ポイント、B賞への応募は10ポイントで行うことができます。賞品も県産品のほか、千葉県内にある宿泊施設の宿泊補助券など豪華賞品もご用意しております！\r\n参加者全員にダウンロードして使えるチーバくんのカレンダーもご用意。\r\nまたラブちば優待券も掲載している施設もありますので、各スポットの画像の最後に掲載している「ラブちば優待証」をお店のスタッフにご提示いただくとそれぞれのスポットで特典を受けられますのでご活用ください。\r\n※ラブちば優待証の内容に関しては各ページでご確認ください。\r\n\r\n千葉県の魅力情報が掲載されたちば観光ナビwebページもご覧ください。\r\nちば観光ナビ：https://maruchiba.jp/index.html　\r\n\r\n\r\n問い合わせ／「GOGO房総デジタルポイントラリーキャンペーン事務局」\r\n Mail：gogoboso.pointrally2024@r.recruit.co.jp",
    "title": "2024年度・GOGO房総デジタルポイントラリーキャンペーン"
   }
  ],
@@ -15069,6 +15082,7 @@
   "useMaxCheckinLimit": false,
   "hasRewardRequest": false,
   "isStartingStampRally": false,
+  "useRewardGrouping": false,
   "useNewLapByRewardRequest": false,
   "useHiddenStampRewardUsed": false,
   "isPreview": false,
@@ -15126,6 +15140,7 @@
     "hasRewardRequest": false,
     "pointEnabled": true,
     "useRewardExchangeSpot": false,
+    "maxSelectItems": 0,
     "maxApplyCount": 0,
     "requiredSpotsCount": 0,
     "sortOrder": 1,
@@ -15150,6 +15165,7 @@
     "rewardPeriodTo": null,
     "rewardPeriodFrom": null,
     "takeRewardVideoUrl": null,
+    "maxSelectItemsDescription": null,
     "ticketCompletionMessage": null,
     "ticketConfirmationMessage": null,
     "ticketAttentionMessage": null,
@@ -15160,7 +15176,7 @@
     "rewardCompleteMessage": "見事30ポイント獲得おめでとうございます！\r\n45名様に抽選でA賞品をプレゼント！",
     "rewardSubDescription": "美味しい温泉　夢みさきで\r\n使えるホテル補助券（15000円分）が当たります！\r\n",
     "rewardSubTitle": "A賞（ホテル補助券）",
-    "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-1/5213.png?v=638608320054396688"
+    "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-1/5213.png?v=638615196068893594"
    },
    {
     "isSeriesReward": false,
@@ -15173,6 +15189,7 @@
     "hasRewardRequest": false,
     "pointEnabled": true,
     "useRewardExchangeSpot": false,
+    "maxSelectItems": 1,
     "maxApplyCount": 0,
     "requiredSpotsCount": 0,
     "sortOrder": 2,
@@ -15193,14 +15210,14 @@
       "Price": 0.0,
       "CurrencyType": 0,
       "ItemId": 2087,
-      "ItemBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointitembanner-2-1/2087.webp?v=638608320053987287",
+      "ItemBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointitembanner-2-1/2087.webp?v=638615196068479549",
       "ItemTitle": "Sghr タンブラー（２個）とKYONAN BEER（2本）"
      },
      {
       "Price": 0.0,
       "CurrencyType": 0,
       "ItemId": 2088,
-      "ItemBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointitembanner-2-2/2088.webp?v=638608320053987287",
+      "ItemBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointitembanner-2-2/2088.webp?v=638615196068479549",
       "ItemTitle": "千葉県お菓子セット"
      }
     ],
@@ -15212,6 +15229,7 @@
     "rewardPeriodTo": null,
     "rewardPeriodFrom": null,
     "takeRewardVideoUrl": null,
+    "maxSelectItemsDescription": null,
     "ticketCompletionMessage": null,
     "ticketConfirmationMessage": null,
     "ticketAttentionMessage": null,
@@ -15222,7 +15240,7 @@
     "rewardCompleteMessage": "見事10ポイント獲得おめでとうございます！\r\nSghr タンブラー（２個）とKYONAN BEER（2本）又は千葉県お菓子セットを選択し応募ができます！",
     "rewardSubDescription": "Sghr タンブラー（２個）とKYONAN BEER（2本）又は\r\n千葉県お菓子セットが抽選で105名様に当たります。",
     "rewardSubTitle": "B賞",
-    "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-2/5214.png?v=638608320054396688"
+    "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-2/5214.png?v=638615196068893594"
    },
    {
     "isSeriesReward": false,
@@ -15235,6 +15253,7 @@
     "hasRewardRequest": false,
     "pointEnabled": true,
     "useRewardExchangeSpot": false,
+    "maxSelectItems": 0,
     "maxApplyCount": 0,
     "requiredSpotsCount": 0,
     "sortOrder": 3,
@@ -15259,6 +15278,7 @@
     "rewardPeriodTo": null,
     "rewardPeriodFrom": null,
     "takeRewardVideoUrl": null,
+    "maxSelectItemsDescription": null,
     "ticketCompletionMessage": null,
     "ticketConfirmationMessage": null,
     "ticketAttentionMessage": null,
@@ -15269,7 +15289,7 @@
     "rewardCompleteMessage": "参加者特典★チーバくんオリジナルカレンダーダウンロード！",
     "rewardSubDescription": "参加者特典としてチーバくんオリジナルカレンダーをダウンロードしていただけます！",
     "rewardSubTitle": "参加賞（参加者特典）",
-    "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-3/5215.webp?v=638608320054396688"
+    "rewardSubBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardpointbanner-3/5215.webp?v=638615196068893594"
    },
    {
     "isSeriesReward": false,
@@ -15282,6 +15302,7 @@
     "hasRewardRequest": false,
     "pointEnabled": false,
     "useRewardExchangeSpot": false,
+    "maxSelectItems": 0,
     "maxApplyCount": 0,
     "requiredSpotsCount": 0,
     "sortOrder": 4,
@@ -15306,6 +15327,7 @@
     "rewardPeriodTo": null,
     "rewardPeriodFrom": null,
     "takeRewardVideoUrl": null,
+    "maxSelectItemsDescription": null,
     "ticketCompletionMessage": null,
     "ticketConfirmationMessage": null,
     "ticketAttentionMessage": null,
@@ -15329,6 +15351,7 @@
     "hasRewardRequest": false,
     "pointEnabled": false,
     "useRewardExchangeSpot": false,
+    "maxSelectItems": 0,
     "maxApplyCount": 0,
     "requiredSpotsCount": 0,
     "sortOrder": 5,
@@ -15353,6 +15376,7 @@
     "rewardPeriodTo": null,
     "rewardPeriodFrom": null,
     "takeRewardVideoUrl": null,
+    "maxSelectItemsDescription": null,
     "ticketCompletionMessage": null,
     "ticketConfirmationMessage": null,
     "ticketAttentionMessage": null,
@@ -15376,6 +15400,7 @@
     "hasRewardRequest": false,
     "pointEnabled": false,
     "useRewardExchangeSpot": false,
+    "maxSelectItems": 0,
     "maxApplyCount": 0,
     "requiredSpotsCount": 0,
     "sortOrder": 6,
@@ -15400,6 +15425,7 @@
     "rewardPeriodTo": null,
     "rewardPeriodFrom": null,
     "takeRewardVideoUrl": null,
+    "maxSelectItemsDescription": null,
     "ticketCompletionMessage": null,
     "ticketConfirmationMessage": null,
     "ticketAttentionMessage": null,
@@ -15888,21 +15914,21 @@
   "rewardDescription": "第一回　9/2-11/30\r\n【A賞】美味しい温泉　夢みさき　 宿泊補助券15000円相当45名様\r\n【B賞】Sghr タンブラー（２個）とKYONAN BEER(1本）セット\r\nまたは、千葉県のお菓子セット105名様\r\n【C賞】参加者全員にダウンロードしていただけるチーバくんオリジナルカレンダー\r\n第二回12/1-2/28\r\n【A賞】房総鴨川温泉　是空ーZEKKU-　宿泊補助券15000円相当45名様\r\n【B賞】おうちで豚しゃぶセット又は千葉県サーメンセット105名様\r\n【参加賞】参加者全員にダウンロードしていただけるチーバくんオリジナルカレンダー\r\n",
   "rewardTitle": "千葉県の魅力が詰まった 素敵な賞品を合計300名様にプレゼント！",
   "rewardMiniBanner": null,
-  "rewardBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardbanner/799.png?v=638608320053987287",
+  "rewardBanner": "https://platinumaps.blob.core.windows.net/maps/857/rewardbanner/799.png?v=638615196068479549",
   "scheduleEnd": "2025年2月28日まで",
   "schedule": "2024年9月2日 ～ 2025年2月28日",
   "icon": null,
-  "stampBaseIcon": "https://platinumaps.blob.core.windows.net/maps/857/stampbaseicon/852.png?v=638608320053987287",
+  "stampBaseIcon": "https://platinumaps.blob.core.windows.net/maps/857/stampbaseicon/852.png?v=638615196068479549",
   "qrCodeProcessingType": "None",
   "terms": "スタンプラリー実施について\r\n・本デジタルスタンプラリーをご利用いただくにあたり、以下の環境を推奨しております。\r\n\r\n■利用推奨環境\r\niPhoneの場合:iOS 13 以降+Safari(ブラウザ)\r\nAndroidの場合:Android 10 以降+Chrome(ブラウザ)\r\n\r\n・上記OSのスマートフォンに搭載されているブラウザ以外は推奨しておりません。 スタンプラリーの参加はスマートフォンからのみ可能であり、パソコン、タブレット、フィーチャーフォンは非対応となります。\r\n・スマートフォン端末に関するご不明点は、ご契約中の通信会社へお問い合わせ下さい。\r\n・スタンプラリーに参加後、スマートフォンの機種変更された場合、獲得済みスタンプの情報が保持されず、最初からのスタートとなります。\r\n・利用ブラウザのCookieの受け入れ設定を有効にしてからご参加ください。無効のまま参加されますとスタンプ情報が保持されませんのでご注意ください。\r\n・Cookieはブラウザごとに異なります。スタンプラリー開始後は、必ず同じブラウザを利用して下さい。異なるブラウザでアクセスした場合は、スタンプ情報が保持されません。\r\n・iPhoneにおけるSafariブラウザのプライベートモード、またAndroidにおけるChromeブラウザのシークレットモードは「オフ」にしてご参加ください。これらが「オン」の場合、Cookie情報が自動削除され、スタンプ情報が保持されません。\r\n・Cookieを削除すると、獲得済みスタンプの情報が削除されますので、ご注意ください。\r\n・動作確認済みの上記スマートフォン以外の一部スマートフォンでは、スタンプラリーにご参加いただけない場合がございます。予めご了承ください。\r\n\r\nご注意事項\r\n・営業時間の変更や施設が利用できない場合があります。事前にご確認の上、お出かけください。\r\n・スタンプポイントは予告なく変更になる場合がございます。最新のスタンプポイントは、スタンプラリーサイトからご確認ください。\r\n・イベントは予告なく変更、中止する場合がございます。\r\n\r\n免責事項\r\n当スタンプラリー の運営に細心の注意を払っておりますが、掲載コンテンツ、各種サービス、その他当スタンプラリーに関するすべての事項について、その正確性、有用性、確実性、安全性等について保証するものではありません。また、以下の場合において利用者または第三者が被る損害について、一切責任を負うものではありません。\r\n\r\n・利用者より正確なデータを入力がなされず、利用者が賞品を受領できない場合\r\n・当スタンプラリーを利用すること及び利用することができなかったことにより、直接的または間接的に損失が生じた場合\r\n・当スタンプラリーの利用に関して、ハードウェアやソフトウェア上の障害が生じた場合\r\n・当スタンプラリーへの、第三者による情報改ざんや妨害によるサービスの中断及び遅延により、何らかの損失が生じた場合\r\n・推奨する閲覧環境以外からアクセスしたことにより、サービスの利用ができない場合\r\n・主催者に故意または重大な過失なく、サービスの欠陥や情報の誤送信が生じた場合\r\n\r\nその他事項\r\n・スタンプ取得に際し、不正行為が発覚した場合は、参加登録は即時解除し、賞品応募もすべて無効となります。\r\n・賞品応募でご入力いただいた個人情報はスタンプラリーの運用（プレゼント当選者へ賞品発送のため配送伝票への記載を含む）にのみ、使用するものとします。（法令等により開示を求められた場合を除く。）\r\n・個人情報は「個人情報保護法」に基づき、適切に管理します。\r\n・当選者の権利の第三者への譲渡・換金・転売等は一切できません。\r\n・QRコードは(株)デンソーウェーブの登録商標です。\r\n\r\nその他イベントに関するご不明な点等は事務局までお問い合わせ下さい。\r\n\r\nQ＆A\r\nQ. スタンプラリーに参加するために必要な環境は？\r\nA．以下の条件を満たした「スマートフォン」と「ブラウザ」が必要です。\r\n・インターネット接続（通信料は参加者様のご負担となります。）\r\n・カメラやQRコード読取アプリからの、QRコード読み取り\r\n\r\n【【操作環境】\r\n●iPhoneをご使用の方：iOS13以降＋Safari（ブラウザ）\r\n●Androidをご使用の方：Android 10以降＋Chrome（ブラウザ）\r\n※パソコン、タブレット、フィーチャーフォン（ガラケー）からご参加いただく事はできません。\r\n\r\nQ.スタンプの獲得（QRコードの読み取り）方法について知りたい。\r\nA．ご使用中の機種により、以下の通り操作をします。\r\n●iPhoneをご使用の方\r\n標準カメラ機能を使用し、読み取ってください。\r\n※外部QRコード読取アプリや、ウィジェットを使用すると、スタンプが保持されません。\r\n\r\n●Androidをご使用の方\r\nお使いのQRコード読取アプリを使用し、読み取ってください。\r\n\r\n■スタンプ獲得までの流れ\r\n（１）まだスタンプを１つも獲得されていない場合\r\n①特設サイト、イベントポスター、チラシ内にある、「スタンプラリー参加用QRコード」を読み取るか、対象スポットに設置されているQRコードを読み取り、スタンプラリーサイトに移行。\r\n②アンケートへの回答、利用規約に同意し、「はじめる」をクリック。\r\n（①で対象スポットに設置されているQRコードを読み取った場合、この時点でスタンプを獲得）\r\n③マップから目的の対象スポットを選択し、「スタンプを押す」をクリック。\r\n④カメラへのアクセスを求められるので、「許可」をクリックし、カメラで対象スポットに設置されているQRコードを読み取るとスタンプ獲得。\r\n\r\n（２）２つ目以降のスタンプを獲得する場合\r\n①スマートフォンの標準カメラ機能（AndroidはQRコード読取アプリ）で対象スポットに設置されているQRコードを読み取るか、もしくは、上記（１）の③④と同様の手順でスタンプを獲得。\r\n\r\n\r\nQ.獲得したはずのスタンプが消えてしまう-\r\nA．以下の場合は獲得したスタンプ履歴が保存されませんのでご注意ください。\r\n・プライベートブラウズモード、シークレットモードでの使用（通常モードでご使用ください。）\r\n・アプリ内ブラウザの使用（ブラウザは、iPhoneの方はSafariを、Androidの方はChromeをご使用ください。）\r\n・複数のブラウザの使用（必ず１種類のブラウザをご使用ください。）\r\n\r\n※以下の場合は、獲得したスタンプ履歴が消えてしまいますのでご注意ください。\r\n・スマートフォンのキャッシュ、Cookieの削除\r\n・買い換え等によるスマートフォンの変更\r\n\r\n推奨環境のブラウザ以外を利用した場合、スタンプが保存されません。必ず推奨環境ブラウザを利用してください（iPhoneの場合: Safari、Androidの場合: Chrome）。QRコードリーダーアプリを利用すると、スタンプが保存されない場合があります。\r\n\r\nQ．獲得したはずのスタンプが未獲得スタンプとして扱われてしまう。\r\nA．ブラウザの再読み込み（リロード）をタップし、サイトを最新の状態にします。\r\n",
   "wideMiniBanner": null,
-  "miniBanner": "https://platinumaps.blob.core.windows.net/maps/857/stamprallyminibanner/852.jpg?v=638608320053987287",
+  "miniBanner": "https://platinumaps.blob.core.windows.net/maps/857/stamprallyminibanner/852.jpg?v=638615196068479549",
   "entryPageBanner": null,
-  "banner": "https://platinumaps.blob.core.windows.net/maps/857/stamprallybanner/852.jpg?v=638608320053987287",
+  "banner": "https://platinumaps.blob.core.windows.net/maps/857/stamprallybanner/852.jpg?v=638615196068479549",
   "mainPageIconType": "PatternA",
   "howToPlay": "１、マップから行きたいスポットを見つけます\r\n２、スポットへ向かいましょう！\r\n３、スポットに到着したらGPSにてポイントをGET! 飲食店の場合はスポットに設置されているQRコードをスマートフォンの標準カメラで読み込みポイントGET!\r\n４、応募条件に該当するポイント数が貯まったら「特典へ応募」から応募します！\r\n\r\n【必ずお読みください】\r\n①QRコードを読み取る際の注意事項ご使用中の機種により下記の通り操作をします。\r\n●iPhoneをご利用の方：標準カメラ機能を使用し、読み取ってください。\r\n※外部QRコード読み取りアプリはヴィジェットを使用するとスタンプが保持されません。\r\n●Androidをご利用の方：お使いのQRコードアプリを使用し読み取ってください。\r\n\r\n②スタンプラリー参加中の注意事項\r\n本スタンプラリーはWebブラウザを使用したスタンプラリーですので参加中は下記の操作にご注意ください。\r\n×キャッシュの消去、Cookieの削除、プライベートブラウズモードでの使用。（獲得したスタンプが消えてしまいます）\r\n必ず同一のブラウザ（iPhoneの方はSafari、Androidの方はChrome）を使用\r\n賞品は第１回（9月2日～11月30日）第２回（12月1日～2月28日）応募条件は下記になります\r\n・A賞（各45名）30ポイント ・B賞（各105名）10ポイント\r\n※全部のスタンプをGETした方には当選確率が上がります。\r\nポイントの付与について\r\n・観光スポット：１ポイント\r\n・モデルルートに含まれるスポット：３ポイント（飲食店スポットがモデルコースに入っていても３ポイント）\r\n・飲食店スポット：３ポイント\r\n\r\n【ラブちば優待対応施設について】\r\n各施設の説明文の下に、ラブちば優待対象施設＋記載の上 特典内容を記載しております。\r\n画像の最後にあるラブちば優対証をお店のスタッフに提示して頂けると特典を受けて頂けるようになりますのでぜひご活用ください。\r\n",
   "mainDescription": null,
-  "description": "スマートフォン等を使って様々な千葉県の魅力に触れられる観光スポットや飲食店を巡る「GOGO房総デジタルポイントラリー」です！観光スポットはGPS機能・飲食店はQRコードを読み取ることでをスタンプを獲得できます。各スポットを自由に巡る楽しみ方に加え、モデルコースもご用意！A賞への応募は30ポイント、B賞への応募は10ポイントで行うことができます。賞品も県産品のほか、千葉県内にある宿泊施設の宿泊補助券など豪華賞品もご用意しております！\r\n参加者全員にダウンロードして使えるチーバくんのカレンダーもご用意。\r\nまたラブちば優待券も掲載している施設もありますので、各スポットの画像の最後に掲載している「ラブちば優待証」をお店のスタッフにご提示いただくとそれぞれのスポットで特典を受けられますのでご活用ください。\r\n※ラブちば優待証の内容に関しては各ページでご確認ください。\r\n\r\n千葉県の魅力情報が掲載された千葉観光ナビwebページもご覧ください。\r\n千葉観光ナビ：https://maruchiba.jp/gogobousou-pointrally/　　　\r\n\r\n\r\n問い合わせ／「GOGO房総デジタルポイントラリーキャンペーン事務局」\r\n Mail：gogoboso.pointrally2024@r.recruit.co.jp",
+  "description": "スマートフォン等を使って様々な千葉県の魅力に触れられる観光スポットや飲食店を巡る「GOGO房総デジタルポイントラリー」です！観光スポットはGPS機能・飲食店はQRコードを読み取ることでをスタンプを獲得できます。各スポットを自由に巡る楽しみ方に加え、モデルコースもご用意！A賞への応募は30ポイント、B賞への応募は10ポイントで行うことができます。賞品も県産品のほか、千葉県内にある宿泊施設の宿泊補助券など豪華賞品もご用意しております！\r\n参加者全員にダウンロードして使えるチーバくんのカレンダーもご用意。\r\nまたラブちば優待券も掲載している施設もありますので、各スポットの画像の最後に掲載している「ラブちば優待証」をお店のスタッフにご提示いただくとそれぞれのスポットで特典を受けられますのでご活用ください。\r\n※ラブちば優待証の内容に関しては各ページでご確認ください。\r\n\r\n千葉県の魅力情報が掲載されたちば観光ナビwebページもご覧ください。\r\nちば観光ナビ：https://maruchiba.jp/index.html　\r\n\r\n\r\n問い合わせ／「GOGO房総デジタルポイントラリーキャンペーン事務局」\r\n Mail：gogoboso.pointrally2024@r.recruit.co.jp",
   "title": "2024年度・GOGO房総デジタルポイントラリーキャンペーン"
  },
  "couponMaster": null,
