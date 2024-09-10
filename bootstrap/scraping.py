@@ -81,12 +81,23 @@ async def scrape_spot_detail(
 async def _find_spot_detail(page: Page, uri: str) -> SpotDetail:
     await page.goto(uri)
 
+    subtitle: str | BaseException | None
     title, subtitle, description, address = await gather(
         _find_text_by_xpath(page, '//div[@class="detail__title"]'),
         _find_text_by_xpath(page, '//div[@class="detail__subtitletext"]'),
         _find_text_by_xpath(page, '//div[@class="ptmdescription__text"]'),
         _find_text_by_xpath(page, "//address"),
+        return_exceptions=True,
     )
+
+    if isinstance(title, BaseException):
+        raise title
+    if isinstance(subtitle, BaseException):
+        subtitle = None
+    if isinstance(description, BaseException):
+        raise description
+    if isinstance(address, BaseException):
+        raise address
 
     return SpotDetail(
         title=title,

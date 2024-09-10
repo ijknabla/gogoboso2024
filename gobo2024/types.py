@@ -21,7 +21,7 @@ class SpotDetail(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     title: StrictStr
-    subtitle: StrictStr
+    subtitle: StrictStr | None = None
     description: StrictStr
     address: Annotated[Address, StrictStr]
 
