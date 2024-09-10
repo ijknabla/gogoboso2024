@@ -12,8 +12,18 @@ SpotId = NewType("SpotId", int)
 StampId = NewType("StampId", int)
 Longitude = NewType("Longitude", float)
 Latitude = NewType("Latitude", float)
+Address = NewType("Address", str)
 
 StampType = Literal["QRCode", "GPS"]
+
+
+class SpotDetail(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    title: StrictStr
+    subtitle: StrictStr
+    description: StrictStr
+    address: Annotated[Address, StrictStr]
 
 
 class StampRallySpot(BaseModel):
