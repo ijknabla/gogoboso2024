@@ -6,7 +6,7 @@ import pytest
 import pytest_asyncio
 from sqlalchemy.orm import Session
 
-from bootstrap.scraping import open_new_page_func, scrape_boot_options
+from bootstrap.scraping import open_new_page, scrape_boot_options
 from gobo2024.db import create_engine
 
 if TYPE_CHECKING:
@@ -25,7 +25,7 @@ def session() -> Iterator[Session]:
 
 @pytest_asyncio.fixture
 async def page() -> AsyncIterator[Page]:
-    async with open_new_page_func(headless=True) as new_page:
+    async with open_new_page(headless=True) as new_page:
         yield await new_page()
 
 

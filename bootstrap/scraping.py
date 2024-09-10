@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
 
 @asynccontextmanager
-async def open_new_page_func(
+async def open_new_page(
     *, headless: bool
 ) -> AsyncIterator[Callable[[], Awaitable[Page]]]:
     browser = await launch(args=["--lang=ja"], headless=headless)
