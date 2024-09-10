@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from asyncio import gather
 from contextlib import AsyncExitStack, asynccontextmanager
 from typing import TYPE_CHECKING
 
@@ -10,9 +11,32 @@ from gobo2024.protocol import closing
 from gobo2024.types import BootOptions
 
 if TYPE_CHECKING:
-    from collections.abc import AsyncIterator
+    from collections.abc import AsyncIterator, Awaitable, Callable
 
     from pyppeteer.page import Page
+
+
+@asynccontextmanager
+async def open_new_page_func(
+    *, headless: bool
+) -> AsyncIterator[Callable[[], Awaitable[Page]]]:
+    browser = await launch(args=["--lang=ja"], headless=headless)
+    try:
+
+        async def iterator() -> AsyncIterator[Page]:
+            for page in await browser.pages():
+                await page.setExtraHTTPHeaders({"Accept-Language": "ja-JP"})
+                yield page
+            while True:
+                page = await browser.newPage()
+                await page.setExtraHTTPHeaders({"Accept-Language": "ja-JP"})
+                yield page
+
+        yield iterator().__anext__
+
+    finally:
+        await gather(*(page.close() for page in await browser.pages()))
+        await browser.close()
 
 
 @asynccontextmanager
