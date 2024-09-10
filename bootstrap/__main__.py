@@ -4,7 +4,7 @@ from importlib.resources import as_file, files
 
 import click
 
-from .scraping import open_page, scrape_boot_options
+from .scraping import open_new_page_func, scrape_boot_options
 
 
 @click.group()
@@ -21,7 +21,8 @@ def main() -> None:
 )
 @(lambda f: wraps(f)(lambda *args, **kwargs: run(f(*args, **kwargs))))
 async def update(*, headless: bool, indent: int, with_event_hub_context: bool) -> None:
-    async with open_page(headless=headless) as page:
+    async with open_new_page_func(headless=headless) as new_page:
+        page = await new_page()
         boot_options = await scrape_boot_options(page)
 
     exclude = set[str]()

@@ -2,12 +2,11 @@ from __future__ import annotations
 
 import re
 from asyncio import gather
-from contextlib import AsyncExitStack, asynccontextmanager
+from contextlib import asynccontextmanager
 from typing import TYPE_CHECKING
 
 from pyppeteer import launch
 
-from gobo2024.protocol import closing
 from gobo2024.types import BootOptions
 
 if TYPE_CHECKING:
@@ -37,21 +36,6 @@ async def open_new_page_func(
     finally:
         await gather(*(page.close() for page in await browser.pages()))
         await browser.close()
-
-
-@asynccontextmanager
-async def open_page(*, headless: bool) -> AsyncIterator[Page]:
-    async with AsyncExitStack() as stack:
-        enter = stack.enter_async_context
-
-        browser = await enter(
-            closing(await launch(args=["--lang=ja"], headless=headless))
-        )
-        for page in await browser.pages():
-            await enter(closing(page))
-            await page.setExtraHTTPHeaders({"Accept-Language": "ja-JP"})
-            yield page
-            return
 
 
 async def scrape_boot_options(
