@@ -41,9 +41,28 @@ async def open_new_page(
 async def scrape_boot_options(
     page: Page,
     *,
-    uri: str = "https://platinumaps.jp/maps/gogoboso2024?list=1",
+    uri: str = "https://platinumaps.jp/d/gogoboso2024",
     target: str = "window.__bootOptions",
 ) -> BootOptions:
+    return await _find_boot_options(
+        page,
+        uri=await _find_map_uri(page, uri=uri),
+        target=target,
+    )
+
+
+async def _find_map_uri(page: Page, uri: str) -> str:
+    xpath = "//iframe"
+    await page.goto(uri)
+    await page.waitForXPath(xpath)
+    for element in await page.Jx(xpath):
+        map_uri: str = await (await element.getProperty("src")).jsonValue()
+        return map_uri
+
+    raise RuntimeError
+
+
+async def _find_boot_options(page: Page, uri: str, target: str) -> BootOptions:
     await page.goto(uri)
 
     xpath = f"//script[starts-with(.,{target!r})]"
