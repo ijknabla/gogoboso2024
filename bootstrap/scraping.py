@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 
 from pyppeteer import launch
 
-from gobo2024.types import Address, BootOptions, SpotDetail, SpotId
+from gobo2024.types import BootOptions, SpotDetail, SpotId
 
 if TYPE_CHECKING:
     from collections.abc import AsyncIterator, Awaitable, Callable
@@ -81,34 +81,31 @@ async def scrape_spot_detail(
 async def _find_spot_detail(page: Page, uri: str) -> SpotDetail:
     await page.goto(uri)
 
-    attributes = [
-        (True, '//div[@class="detail__title"]'),
-        (False, '//div[@class="detail__subtitletext"]'),
-        (True, '//div[@class="ptmdescription__text"]'),
-        (True, "//address"),
-    ]
+    attributes = {
+        "title": (True, '//div[@class="detail__title"]'),
+        "subtitle": (False, '//div[@class="detail__subtitletext"]'),
+        "description": (True, '//div[@class="ptmdescription__text"]'),
+        "address": (True, "//address"),
+    }
 
     await gather(
-        *(page.waitForXPath(xpath) for required, xpath in attributes if required)
+        *(
+            page.waitForXPath(xpath)
+            for required, xpath in attributes.values()
+            if required
+        )
     )
 
-    title, subtitle, description, address = await gather(
-        *(_find_text_by_xpath(page, xpath) for _, xpath in attributes)
+    not_validated = dict(
+        zip(
+            attributes.keys(),
+            await gather(
+                *(_find_text_by_xpath(page, xpath) for _, xpath in attributes.values())
+            ),
+        )
     )
 
-    if title is None:
-        raise RuntimeError
-    if description is None:
-        raise RuntimeError
-    if address is None:
-        raise RuntimeError
-
-    return SpotDetail(
-        title=title,
-        subtitle=subtitle,
-        description=description,
-        address=Address(address),
-    )
+    return SpotDetail.model_validate(not_validated)
 
 
 async def _find_iframe_src(page: Page, uri: str) -> str:
