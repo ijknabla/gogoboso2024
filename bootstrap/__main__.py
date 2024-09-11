@@ -7,6 +7,7 @@ from collections import ChainMap
 from contextlib import suppress
 from functools import wraps
 from importlib.resources import as_file, files
+from itertools import count
 from typing import TYPE_CHECKING
 
 import click
@@ -18,6 +19,9 @@ from .scraping import open_new_page, scrape_boot_options, scrape_spot_detail
 
 if TYPE_CHECKING:
     from pyppeteer.page import Page
+
+
+logger = logging.getLogger(__name__)
 
 
 @click.group()
@@ -59,7 +63,7 @@ async def update(
                     ChainMap(
                         *await gather(
                             *(
-                                _scrape_spot_detail(page, spots)
+                                _scrape_spot_detail(page, spots, rank)
                                 for rank, page in enumerate(pages)
                             )
                         )
@@ -84,11 +88,12 @@ async def update(
 
 
 async def _scrape_spot_detail(
-    page: Page, queue: Queue[SpotId]
+    page: Page, queue: Queue[SpotId], rank: int
 ) -> dict[SpotId, SpotDetail]:
     result = dict[SpotId, SpotDetail]()
 
     queue_join = create_task(queue.join())
+    counter = count()
 
     while True:
         queue_get = create_task(queue.get())
@@ -100,7 +105,13 @@ async def _scrape_spot_detail(
         if queue_get in done:
             queue.task_done()
             spot_id = queue_get.result()
-            result[spot_id] = await scrape_spot_detail(page, spot_id=spot_id)
+            result[spot_id] = spot_detail = await scrape_spot_detail(
+                page, spot_id=spot_id
+            )
+            logger.info(
+                f"[{rank:0>2},{next(counter):0>3}] {spot_id} :: {spot_detail.title[:5]}"
+            )
+
         else:
             for task in pending:
                 task.cancel()
