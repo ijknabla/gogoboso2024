@@ -82,7 +82,7 @@ async def update(
             encoding="utf-8",
         )
 
-        (resources / "spot_detail.json").write_text(
+        (resources / "spotDetail.json").write_text(
             spot_detail.model_dump_json(indent=indent) + "\n", encoding="utf-8"
         )
 
