@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import logging
 from asyncio import CancelledError, create_task, gather, run, wait
 from asyncio.queues import Queue
 from collections import ChainMap
 from contextlib import suppress
 from functools import wraps
 from importlib.resources import as_file, files
+from itertools import count
 from typing import TYPE_CHECKING
 
 import click
@@ -19,6 +21,9 @@ if TYPE_CHECKING:
     from pyppeteer.page import Page
 
 
+logger = logging.getLogger(__name__)
+
+
 @click.group()
 def main() -> None:
     pass
@@ -27,6 +32,7 @@ def main() -> None:
 @main.command()
 @click.option("--headless/--headful", default=True)
 @click.option("-n", type=int, default=0)
+@click.option("-v", "--verbose", count=True)
 @click.option("--indent", type=int, default=1)
 @click.option(
     "--with-event-hub-context/--without-event-hub-context",
@@ -34,8 +40,11 @@ def main() -> None:
 )
 @(lambda f: wraps(f)(lambda *args, **kwargs: run(f(*args, **kwargs))))
 async def update(
-    *, headless: bool, n: int, indent: int, with_event_hub_context: bool
+    *, headless: bool, n: int, verbose: int, indent: int, with_event_hub_context: bool
 ) -> None:
+    if verbose > 0:
+        logging.root.addHandler(logging.StreamHandler())
+        logging.root.setLevel({1: logging.INFO}.get(verbose, logging.DEBUG))
     async with open_new_page(headless=headless) as new_page:
         page = await new_page()
         boot_options = await scrape_boot_options(page)
@@ -54,7 +63,7 @@ async def update(
                     ChainMap(
                         *await gather(
                             *(
-                                _scrape_spot_detail(page, spots)
+                                _scrape_spot_detail(page, spots, rank)
                                 for rank, page in enumerate(pages)
                             )
                         )
@@ -73,17 +82,18 @@ async def update(
             encoding="utf-8",
         )
 
-        (resources / "spot_detail.json").write_text(
+        (resources / "spotDetail.json").write_text(
             spot_detail.model_dump_json(indent=indent) + "\n", encoding="utf-8"
         )
 
 
 async def _scrape_spot_detail(
-    page: Page, queue: Queue[SpotId]
+    page: Page, queue: Queue[SpotId], rank: int
 ) -> dict[SpotId, SpotDetail]:
     result = dict[SpotId, SpotDetail]()
 
     queue_join = create_task(queue.join())
+    counter = count()
 
     while True:
         queue_get = create_task(queue.get())
@@ -95,7 +105,13 @@ async def _scrape_spot_detail(
         if queue_get in done:
             queue.task_done()
             spot_id = queue_get.result()
-            result[spot_id] = await scrape_spot_detail(page, spot_id=spot_id)
+            result[spot_id] = spot_detail = await scrape_spot_detail(
+                page, spot_id=spot_id
+            )
+            logger.info(
+                f"[{rank:0>2},{next(counter):0>3}] {spot_id} :: {spot_detail.title[:5]}"
+            )
+
         else:
             for task in pending:
                 task.cancel()

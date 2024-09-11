@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 
 from pyppeteer import launch
 
-from gobo2024.types import Address, BootOptions, SpotDetail, SpotId
+from gobo2024.types import BootOptions, SpotDetail, SpotId
 
 if TYPE_CHECKING:
     from collections.abc import AsyncIterator, Awaitable, Callable
@@ -81,30 +81,31 @@ async def scrape_spot_detail(
 async def _find_spot_detail(page: Page, uri: str) -> SpotDetail:
     await page.goto(uri)
 
-    subtitle: str | BaseException | None
-    title, subtitle, description, address = await gather(
-        _find_text_by_xpath(page, '//div[@class="detail__title"]'),
-        _find_text_by_xpath(page, '//div[@class="detail__subtitletext"]'),
-        _find_text_by_xpath(page, '//div[@class="ptmdescription__text"]'),
-        _find_text_by_xpath(page, "//address"),
-        return_exceptions=True,
+    attributes = {
+        "title": (True, '//div[@class="detail__title"]'),
+        "subtitle": (False, '//div[@class="detail__subtitletext"]'),
+        "description": (True, '//div[@class="ptmdescription__text"]'),
+        "address": (True, "//address"),
+    }
+
+    await gather(
+        *(
+            page.waitForXPath(xpath)
+            for required, xpath in attributes.values()
+            if required
+        )
     )
 
-    if isinstance(title, BaseException):
-        raise title
-    if isinstance(subtitle, BaseException):
-        subtitle = None
-    if isinstance(description, BaseException):
-        raise description
-    if isinstance(address, BaseException):
-        raise address
-
-    return SpotDetail(
-        title=title,
-        subtitle=subtitle,
-        description=description,
-        address=Address(address),
+    not_validated = dict(
+        zip(
+            attributes.keys(),
+            await gather(
+                *(_find_text_by_xpath(page, xpath) for _, xpath in attributes.values())
+            ),
+        )
     )
+
+    return SpotDetail.model_validate(not_validated)
 
 
 async def _find_iframe_src(page: Page, uri: str) -> str:
@@ -118,9 +119,8 @@ async def _find_iframe_src(page: Page, uri: str) -> str:
     raise RuntimeError
 
 
-async def _find_text_by_xpath(page: Page, xpath: str) -> str:
-    await page.waitForXPath(xpath)
+async def _find_text_by_xpath(page: Page, xpath: str) -> str | None:
     for element in await page.Jx(xpath):
         text: str = await (await element.getProperty("textContent")).jsonValue()
         return text
-    raise RuntimeError
+    return None
