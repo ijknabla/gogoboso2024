@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from asyncio import CancelledError, create_task, gather, run, wait
 from asyncio.queues import Queue
 from collections import ChainMap
@@ -27,6 +28,7 @@ def main() -> None:
 @main.command()
 @click.option("--headless/--headful", default=True)
 @click.option("-n", type=int, default=0)
+@click.option("-v", "--verbose", count=True)
 @click.option("--indent", type=int, default=1)
 @click.option(
     "--with-event-hub-context/--without-event-hub-context",
@@ -34,8 +36,11 @@ def main() -> None:
 )
 @(lambda f: wraps(f)(lambda *args, **kwargs: run(f(*args, **kwargs))))
 async def update(
-    *, headless: bool, n: int, indent: int, with_event_hub_context: bool
+    *, headless: bool, n: int, verbose: int, indent: int, with_event_hub_context: bool
 ) -> None:
+    if verbose > 0:
+        logging.root.addHandler(logging.StreamHandler())
+        logging.root.setLevel({1: logging.INFO}.get(verbose, logging.DEBUG))
     async with open_new_page(headless=headless) as new_page:
         page = await new_page()
         boot_options = await scrape_boot_options(page)
