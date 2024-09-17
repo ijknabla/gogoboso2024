@@ -83,11 +83,11 @@ def main(
 
     if togo:
         with Session(engine) as session:
-            _write_togo(csv.writer(togo), log, session)
+            _write_togo(csv.writer(togo, lineterminator="\n"), log, session)
 
     if done:
         with Session(engine) as session:
-            _write_done(csv.writer(done), log, session)
+            _write_done(csv.writer(done, lineterminator="\n"), log, session)
 
 
 def _write_togo(writer: Any, log: DataFrame, session: Session) -> None:
