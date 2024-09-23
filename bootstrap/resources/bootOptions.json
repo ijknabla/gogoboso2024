@@ -15931,7 +15931,8 @@
   "description": "スマートフォン等を使って様々な千葉県の魅力に触れられる観光スポットや飲食店を巡る「GOGO房総デジタルポイントラリー」です！観光スポットはGPS機能・飲食店はQRコードを読み取ることでをスタンプを獲得できます。各スポットを自由に巡る楽しみ方に加え、モデルコースもご用意！A賞への応募は30ポイント、B賞への応募は10ポイントで行うことができます。賞品も県産品のほか、千葉県内にある宿泊施設の宿泊補助券など豪華賞品もご用意しております！\r\n参加者全員にダウンロードして使えるチーバくんのカレンダーもご用意。\r\nまたラブちば優待券も掲載している施設もありますので、各スポットの画像の最後に掲載している「ラブちば優待証」をお店のスタッフにご提示いただくとそれぞれのスポットで特典を受けられますのでご活用ください。\r\n※ラブちば優待証の内容に関しては各ページでご確認ください。\r\n\r\n千葉県の魅力情報が掲載されたちば観光ナビwebページもご覧ください。\r\nちば観光ナビ：https://maruchiba.jp/index.html　\r\n\r\n\r\n問い合わせ／「GOGO房総デジタルポイントラリーキャンペーン事務局」\r\n Mail：gogoboso.pointrally2024@r.recruit.co.jp",
   "title": "2024年度・GOGO房総デジタルポイントラリーキャンペーン"
  },
- "couponMaster": null,
+ "couponConfig": null,
+ "couponMasters": null,
  "coupons": [],
  "couponGroups": [],
  "areaCodes": [
@@ -16270,6 +16271,7 @@
  "graphicMaps": [],
  "rasterImageLayers": [],
  "initialSpotGraphicMapFloor": null,
+ "initialCameraPosition": null,
  "markerOptions": {
   "useListMarkerCustom": false,
   "useCustomSpotMarkerVariableSize": false,
