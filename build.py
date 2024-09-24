@@ -11,7 +11,7 @@ from gobo2024.types import StampId, StampType
 def main() -> None:
     engine = db.create_engine()
     if engine.url.database is not None and Path(engine.url.database).exists():
-        return
+        Path(engine.url.database).unlink()
 
     # CREATE TABLE
     db.Table.metadata.create_all(engine)
